@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@theme{
+  /* Colors */
+
+    /* Brand */
+  --blue-brand: #2c468a;
+    /* Soport color */
+  --state-grey: #6B7A99;
+    /*  Informative color*/
+  --cerulean: #3A7CA5;  
+
+  /* Neutral Colors */
+    /* Divisor Color */
+  --platinium: #E6E8EE;
+    /*  Neutral Background Color */
+  --snow: #FFFBFC;
+    /*  Neutral Text white Color */
+  --white: #FFFFFF;
+    /*  Secundary text black Color */
+  --black: #010400;
+    /*  Secundary text black Color 2 */
+  --characol:#4A4A4A;
+    /*  Disabled */
+  --cool-steel:#9AA1AF;
+
+  /* Accion Colors */
+    /* Primary Accion Color */
+  --carmine: #B02A37;
+    /* Hover Accion Color */
+  --deep-crismon: #8F1F2A;
+    /* Secundary or outline Color */
+  --amaranth: #E04855;
+    /* Success Color */
+  --sea-green:#2F8F5B;
+    /*  Alert Color*/
+  --goldenrod:#E0A800;
+    /* Non critic Error Color */
+  --tomatoe-jam:#C0392B;
+}
+
+@layer components{
+  /* Fonts */
+    /* --- Main Font text & tittles */
+      /* Main Text, Paragraphs, Descriptions*/
+  @font-face {
+    font-family: "Inter-Medium";
+    src: url('../fonts/inter/static/Inter_28pt-Medium.ttf');
+  }
+    /* Form Labels, Important Text */
+  @font-face {
+    font-family: "Inter-Bold";
+    src: url('../fonts/inter/static/Inter_28pt-Bold.ttf');
+  }
+    /* Buttons, Table Headers, Emphasis*/
+  @font-face {
+    font-family: "Inter-Semibold";
+    src: url('../fonts/inter/static/Inter_28pt-SemiBold.ttf');
+  }
+    /*  Links, Text Navs*/
+  @font-face {
+    font-family: "Inter-Italic";
+    src: url('../fonts/inter/static/Inter_28pt-Italic.ttf');
+  }
+    /* Main Tittles, Hierarchies*/
+      /*  Main Tittles*/
+  @font-face {
+    font-family: "Montserrat-Bold";
+    src: url('../fonts/montserrat/static/Montserrat-Bold.ttf');
+  }
+    /*  Module Ttittles*/
+  @font-face {
+    font-family: "Montserrat-Semibold";
+    src: url('../fonts/montserrat/static/Montserrat-SemiBold.ttf');
+  }
+  @font-face {
+    font-family: "Montserrat-Medium";
+    src: url('../fonts/montserrat/static/Montserrat-Medium.ttf')
+  }
+}
+
+@layer components{
+  /* Styling */
+  body{
+    @apply bg-(--snow) font-["Inter-Medium"] text-2xl;
+  }
+}
