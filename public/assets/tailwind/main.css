@@ -1,0 +1,387 @@
+@import "tailwindcss";
+
+/*
+   THEME · Variables globales
+ */
+@theme {
+  /* Brand */
+  --blue-brand: #2c468a;
+  --state-grey: #6b7a99;
+  --cerulean: #3a7ca5;
+
+  /* Neutral */
+  --platinium: #e6e8ee;
+  --snow: #fffbfc;
+  --white: #ffffff;
+  --black: #010400;
+  --characol: #4a4a4a;
+  --cool-steel: #9aa1af;
+
+  /* Actions */
+  --carmine: #b02a37;
+  --deep-crismon: #8f1f2a;
+  --amaranth: #e04855;
+  --sea-green: #2f8f5b;
+  --goldenrod: #e0a800;
+  --tomatoe-jam: #c0392b;
+}
+
+/* 
+   FONTS
+ */
+@layer components {
+  @font-face {
+    font-family: "Inter-Medium";
+    src: url("../fonts/inter/static/Inter_28pt-Medium.ttf");
+  }
+
+  @font-face {
+    font-family: "Inter-Bold";
+    src: url("../fonts/inter/static/Inter_28pt-Bold.ttf");
+  }
+
+  @font-face {
+    font-family: "Inter-Semibold";
+    src: url("../fonts/inter/static/Inter_28pt-SemiBold.ttf");
+  }
+
+  @font-face {
+    font-family: "Inter-Italic";
+    src: url("../fonts/inter/static/Inter_28pt-Italic.ttf");
+  }
+
+  @font-face {
+    font-family: "Montserrat-Bold";
+    src: url("../fonts/montserrat/static/Montserrat-Bold.ttf");
+  }
+
+  @font-face {
+    font-family: "Montserrat-Semibold";
+    src: url("../fonts/montserrat/static/Montserrat-SemiBold.ttf");
+  }
+
+  @font-face {
+    font-family: "Montserrat-Medium";
+    src: url("../fonts/montserrat/static/Montserrat-Medium.ttf");
+  }
+}
+
+/*
+   BASE GLOBAL
+*/
+@layer components {
+  body {
+    @apply bg-(--snow) font-["Inter-Medium"] text-base text-(--black);
+  }
+}
+
+/*
+   LAYOUT GENERAL (POST-LOGIN)
+*/
+@layer components {
+  .app-layout {
+    @apply min-h-screen flex flex-col bg-(--snow);
+  }
+
+  .app-header {
+    @apply w-full bg-(--white) border-b border-(--platinium)
+           px-10 py-6 flex items-center justify-between;
+  }
+
+  .app-title {
+    @apply font-["Montserrat-Bold"] text-xl text-(--blue-brand);
+  }
+
+  .app-user {
+    @apply text-sm text-(--state-grey);
+  }
+
+  .app-main {
+    @apply flex-1 px-10 py-8;
+  }
+
+  .app-footer {
+    @apply border-t border-(--platinium)
+           px-10 py-4 text-center
+           text-xs text-(--state-grey);
+  }
+}
+/*
+   LOGIN
+ */
+@layer components {
+  .login-wrapper {
+    @apply min-h-screen flex items-center justify-center p-4;
+  }
+
+  .login-card {
+    @apply w-full max-w-md bg-(--white) p-10 rounded-lg
+           border border-(--platinium)
+           shadow-[0_10px_25px_rgba(0,0,0,0.05)]
+           text-center;
+  }
+
+  .login-title {
+    @apply font-["Montserrat-Bold"] text-3xl text-(--blue-brand)
+           uppercase tracking-tight mb-2;
+  }
+
+  .login-subtitle {
+    @apply text-sm text-(--state-grey) mb-8;
+  }
+
+  .login-form {
+    @apply flex flex-col gap-6 text-left;
+  }
+}
+
+/* FORMULARIOS (GLOBAL) */
+
+@layer components {
+  .form-group {
+    @apply flex flex-col gap-2 mb-4;
+  }
+
+  .form-group label {
+    @apply font-["Inter-Bold"] text-xs text-(--characol)
+           uppercase tracking-wide;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    @apply w-full p-4 rounded-md border border-(--platinium)
+           bg-(--white) text-(--black)
+           focus:outline-none focus:ring-2 focus:ring-(--cerulean)
+           placeholder:text-(--cool-steel);
+  }
+
+  .form-container {
+    @apply max-w-4xl mx-auto bg-(--white)
+           border border-(--platinium)
+           rounded-lg p-8;
+  }
+
+  .form-title {
+    @apply font-["Montserrat-Semibold"] text-2xl
+           text-(--blue-brand) mb-6;
+  }
+
+  .form-actions {
+    @apply mt-8 flex gap-4;
+  }
+}
+
+/* BOTONES */
+@layer components {
+  .btn-primary {
+    @apply inline-block text-center
+           py-4 px-6 rounded-md
+           bg-(--carmine) text-(--white)
+           font-["Inter-Semibold"]
+           transition-colors duration-200
+           hover:bg-(--deep-crismon)
+           active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-block text-center
+           py-4 px-6 rounded-md
+           bg-(--cerulean) text-(--white)
+           hover:bg-(--blue-brand);
+  }
+}
+
+/* DASHBOARD / HOME */
+@layer components {
+  .dashboard {
+    @apply max-w-6xl mx-auto;
+  }
+
+  .dashboard-title {
+    @apply font-["Montserrat-Bold"] text-3xl text-(--blue-brand);
+  }
+
+  .dashboard-subtitle {
+    @apply mt-2 text-(--state-grey);
+  }
+
+  .dashboard-actions {
+    @apply mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6;
+  }
+
+  .dashboard-card {
+    @apply bg-(--white) border border-(--platinium)
+           rounded-lg p-6 hover:shadow-md;
+  }
+
+  .dashboard-card-title {
+    @apply font-["Inter-Bold"] text-lg;
+  }
+
+  .dashboard-card-text {
+    @apply mt-2 text-sm text-(--state-grey);
+  }
+}
+
+/*
+   ALERTAS / ESTADOS
+*/
+@layer components {
+  .alert {
+    @apply p-4 rounded-md text-sm mb-6;
+  }
+
+  .alert-success {
+    @apply bg-(--sea-green)/10 text-(--sea-green)
+           border border-(--sea-green);
+  }
+
+  .alert-error {
+    @apply bg-(--tomatoe-jam)/10 text-(--tomatoe-jam)
+           border border-(--tomatoe-jam);
+  }
+
+  .alert-warning {
+    @apply bg-(--goldenrod)/10 text-(--goldenrod)
+           border border-(--goldenrod);
+  }
+}
+
+/* 
+   NUEVA DENUNCIA – MAQUETA VISUAL
+*/
+@layer components {
+  .denuncia-screen {
+    @apply min-h-screen
+           bg-(--snow)
+           flex
+           items-start
+           justify-center
+           pt-16;
+  }
+
+  .denuncia-card {
+    @apply w-full max-w-4xl
+           bg-(--white)
+           rounded-xl
+           border border-(--platinium)
+           shadow-[0_15px_35px_rgba(0,0,0,0.08)]
+           p-12;
+  }
+
+  .denuncia-header {
+    @apply mb-10;
+  }
+
+  .denuncia-title {
+    @apply font-["Montserrat-Bold"]
+           text-3xl
+           text-(--blue-brand)
+           mb-2;
+  }
+
+  .denuncia-subtitle {
+    @apply text-(--state-grey);
+  }
+
+  .denuncia-form {
+    @apply flex flex-col gap-8;
+  }
+
+  /* CAMPOS */
+  .denuncia-field {
+    @apply flex flex-col gap-2;
+  }
+
+  .denuncia-field label {
+    @apply font-["Inter-Bold"]
+           text-sm
+           uppercase
+           tracking-wide
+           text-(--characol);
+  }
+
+  .denuncia-field input,
+  .denuncia-field textarea {
+    @apply w-full
+           bg-(--snow)
+           border border-(--platinium)
+           rounded-md
+           px-4 py-3
+           font-["Inter-Medium"]
+           text-(--black)
+           transition-all
+           focus:outline-none
+           focus:ring-2
+           focus:ring-(--cerulean)
+           focus:border-transparent;
+  }
+
+  .denuncia-field textarea {
+    @apply min-h-[160px] resize-none;
+  }
+
+  /* ACCIONES */
+  .denuncia-actions {
+    @apply pt-6
+           gap-2
+           border-t
+           border-(--platinium)
+           flex
+           justify-end;
+  }
+  /*
+   LISTADO DE DENUNCIAS
+*/
+  @layer components {
+    .denuncias-screen {
+      @apply max-w-6xl mx-auto py-12;
+    }
+
+    .denuncias-header {
+      @apply flex items-center justify-between mb-8;
+    }
+
+    .denuncias-title {
+      @apply font-["Montserrat-Bold"]
+           text-3xl
+           text-(--blue-brand);
+    }
+
+    .denuncias-list {
+      @apply bg-(--white)
+           border
+           border-(--platinium)
+           rounded-lg
+           overflow-hidden;
+    }
+
+    .denuncia-item {
+      @apply p-6
+           border-b
+           border-(--platinium)
+           last:border-b-0;
+    }
+
+    .denuncia-item-title {
+      @apply font-["Inter-Bold"]
+           text-lg
+           text-(--black);
+    }
+
+    .denuncia-item-description {
+      @apply mt-2
+           text-sm
+           text-(--state-grey)
+           leading-relaxed;
+    }
+
+    .denuncia-item-meta {
+      @apply block
+           mt-3
+           text-xs
+           text-(--cool-steel);
+    }
+  }
+}
