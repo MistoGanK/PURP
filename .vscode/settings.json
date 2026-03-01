@@ -1,0 +1,6 @@
+{
+    "path-intellisense.mappings": {
+        "/": "${workspaceRoot}/public"
+    },
+    "path-intellisense.absolutePathToWorkspace": true
+}
