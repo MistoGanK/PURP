@@ -1,1 +1,21 @@
+### --- Entorno Local y Dependencias ---
+
 node_modules/
+
+# archivos de logs de NPM
+npm-debug.log*
+
+### --- Archivos Generados (Tailwind CSS) ---
+public/assets/tailwind/mainOutput.css
+
+### --- Datos de Docker (Persistencia) ---
+db_data/
+mysql/
+
+### --- Archivos de Configuración Sensible ---
+.env
+.env.local
+
+### --- Archivos del Sistema Operativo ---
+.DS_Store
+Thumbs.db

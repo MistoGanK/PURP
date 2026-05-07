@@ -1,10 +1,10 @@
 <?php
 // --- LOCALHOST CONNECTION (DEV) ---
 return [
-    'host'     => 'localhost',
+    'host'     => 'db',
     'dbname'   => 'purpdb',
-    'user'     => 'root',
-    'password' => '',
+    'user'     => 'purp_dev',
+    'password' => 'purp2077',
     'charset'  => 'utf8mb4'
 ];
 // --- REMOTE HOST CONNECTION ---
