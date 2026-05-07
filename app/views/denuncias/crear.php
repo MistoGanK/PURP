@@ -48,7 +48,7 @@
 
       <!-- ACCIONES -->
       <div class="denuncia-actions">
-        <a href="/PURP/public/index.php?action=home"
+        <a href="/index.php?action=home"
            class="btn-secondary">
           Volver a inicio
         </a>
