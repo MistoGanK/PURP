@@ -1,11 +1,15 @@
 <?php
-ini_set('display_errors', 1);
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+ini_set('display_errors', 1); 
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-session_start();
-
 $action = $_GET['action'] ?? 'home';
+
+require_once __DIR__ . '/../app/helpers/i18n.php';
 
 require_once __DIR__ . '/../app/models/BaseModel.php';
 require_once __DIR__ . '/../app/models/User.php';
@@ -20,6 +24,14 @@ switch ($action) {
     /* --- HOME --- */
     case 'home':
         HomeController::index();
+        break;
+
+    /* --- Lang ---*/
+    case 'set_lang':
+        $newLang = $_GET['lang'] ?? 'es';
+        $_SESSION['lang'] = $newLang;
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        exit;
         break;
 
     /* --- AUTH --- */
@@ -54,4 +66,3 @@ switch ($action) {
         echo 'Página no encontrada';
         break;
 }
-?>

@@ -1,0 +1,6 @@
+@layer components {
+  .app-layout { @apply min-h-screen flex flex-col bg-(--snow); }
+  .app-header { @apply w-full bg-(--white) border-b border-(--platinium) px-10 py-6 flex items-center justify-between; }
+  .vertical-list { @apply list-none p-0 m-0 flex flex-col gap-3;}
+  .horizontal-list { @apply list-none p-0 m-0 flex flex-row items-center gap-6; }
+}

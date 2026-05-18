@@ -1,0 +1,4 @@
+@layer components {
+  .login-wrapper { @apply min-h-screen flex items-center justify-center p-4; }
+  .login-card { @apply w-full max-w-md bg-(--white) p-10 rounded-lg border border-(--platinium) shadow-md text-center; }
+}

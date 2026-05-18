@@ -1,6 +1,8 @@
 ### --- Entorno Local y Dependencias ---
-
 node_modules/
+
+### --- Local Tailwind Compilación ---
+public/assets/tailwind/mainOutput.css
 
 # archivos de logs de NPM
 npm-debug.log*

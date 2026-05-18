@@ -1,0 +1,47 @@
+@layer components {
+  /* Alertas (Landing) */
+  .alert-item { @apply flex items-start gap-3 text-sm p-2 rounded; }
+  .alert-item-warning { @apply bg-orange-50; }
+  .alert-item-danger { @apply bg-red-50; }
+
+  /* Widgets (Generics) */
+  .widget-item { @apply flex items-center gap-3 py-2 border-b border-(--platinium); }
+  .widget-item:last-child { @apply border-0; }
+  .widget-icon { @apply w-5 h-5 opacity-90 object-contain; }
+  .widget-link { @apply text-(--blue-brand) hover:underline text-sm font-['Inter-Medium']; }
+  
+  .widget-footer { @apply text-right mt-3; }
+  .view-more-link { @apply text-(--blue-brand) hover:underline text-xs font-['Inter-Semibold']; }
+
+  .search-group {
+    @apply flex items-stretch mb-4 
+           bg-(--white) border border-(--platinium) rounded-md
+           transition-all duration-150;
+  }
+
+  .search-group:focus-within {
+    @apply border-(--blue-brand) ring-1 ring-(--blue-brand);
+  }
+
+  .search-input {
+    @apply flex-1 px-4 py-3
+           bg-transparent border-none outline-none
+           font-["Inter-Medium"] text-sm text-(--black)
+           placeholder:text-(--cool-steel);
+  }
+
+  .btn-search {
+    @apply px-4 flex items-center justify-center 
+           bg-(--snow) border-l border-(--platinium) rounded-r-md
+           hover:bg-(--platinium)
+           transition-colors text-base cursor-pointer;
+  }
+
+  .btn-block {
+    @apply w-full py-3 px-4 block text-center
+           bg-(--blue-brand) text-(--white)
+           font-["Inter-Semibold"] text-sm rounded-md
+           hover:bg-(--cerulean)
+           transition-all duration-150 active:scale-[0.99];
+  }
+}

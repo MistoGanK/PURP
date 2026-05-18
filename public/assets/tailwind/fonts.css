@@ -1,0 +1,30 @@
+@layer base {
+  @font-face {
+    font-family: "Inter-Medium";
+    src: url("../../fonts/inter/static/Inter_28pt-Medium.ttf");
+  }
+  @font-face {
+    font-family: "Inter-Bold";
+    src: url("../../fonts/inter/static/Inter_28pt-Bold.ttf");
+  }
+  @font-face {
+    font-family: "Inter-Semibold";
+    src: url("../../fonts/inter/static/Inter_28pt-SemiBold.ttf");
+  }
+  @font-face {
+    font-family: "Inter-Italic";
+    src: url("../../fonts/inter/static/Inter_28pt-Italic.ttf");
+  }
+  @font-face {
+    font-family: "Montserrat-Bold";
+    src: url("../../fonts/montserrat/static/Montserrat-Bold.ttf");
+  }
+  @font-face {
+    font-family: "Montserrat-Semibold";
+    src: url("../../fonts/montserrat/static/Montserrat-SemiBold.ttf");
+  }
+  @font-face {
+    font-family: "Montserrat-Medium";
+    src: url("../../fonts/montserrat/static/Montserrat-Medium.ttf");
+  }
+}

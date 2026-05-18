@@ -1,0 +1,44 @@
+@layer components {
+  .denuncia-screen {
+    @apply max-w-7xl mx-auto py-6 px-4 md:py-12 md:px-8;
+  }
+
+  .denuncia-card {
+    @apply w-full bg-(--white) border border-(--platinium) rounded-lg p-6 md:p-12 lg:p-16 shadow-sm;
+  }
+
+  .denuncia-header {
+    @apply border-b border-(--platinium) pb-6 mb-8;
+  }
+
+  .denuncia-title {
+    @apply font-["Montserrat-Bold"] text-2xl md:text-3xl lg:text-4xl text-(--characol) mb-2;
+  }
+
+  .denuncia-subtitle {
+    @apply text-sm md:text-base text-(--cool-steel) font-["Inter-Medium"];
+  }
+
+  .denuncia-form {
+    @apply flex flex-col gap-6 md:gap-8;
+  }
+
+  .denuncia-form label {
+    @apply text-sm md:text-base font-["Inter-Medium"] text-(--characol) mb-2 block;
+  }
+
+  .denuncia-form input,
+  .denuncia-form textarea,
+  .denuncia-form select {
+    @apply w-full text-base md:text-lg p-3 md:p-4 border border-(--platinium) rounded-md focus:outline-none;
+  }
+
+  .denuncia-actions {
+    @apply flex flex-col sm:flex-row justify-between items-center gap-4 mt-6 pt-6 border-t border-(--platinium);
+  }
+  
+  .denuncia-actions a,
+  .denuncia-actions button {
+    @apply w-full sm:w-auto md:text-lg md:py-3.5 md:px-8 font-medium;
+  }
+}

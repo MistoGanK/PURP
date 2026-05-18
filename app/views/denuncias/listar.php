@@ -8,13 +8,13 @@
     </h1>
 
     <div class="flex gap-4">
-      <a href="/PURP/public/index.php?action=home"
+      <a href="/index.php?action=home"
         class="btn-secondary">
         Volver a inicio
       </a>
 
 
-      <a href="/PURP/public/index.php?action=denuncia_nueva"
+      <a href="/index.php?action=denuncia_nueva"
         class="btn-primary">
         Nueva denuncia
       </a>

@@ -5,9 +5,9 @@
   <section class="denuncia-card">
 
     <header class="denuncia-header">
-      <h1 class="denuncia-title">Nueva denuncia</h1>
+      <h1 class="denuncia-title"><?php echo __('title_new_denuncia'); ?></h1>
       <p class="denuncia-subtitle">
-        Complete los datos requeridos para registrar una nueva denuncia
+        <?php echo __('subtitle_new_denuncia'); ?>
       </p>
     </header>
 
@@ -15,30 +15,27 @@
           action="/PURP/public/index.php?action=denuncia_guardar"
           class="denuncia-form">
 
-      <!-- BLOQUE: TIPO DE DELITO -->
       <div class="denuncia-field">
-        <label for="tipo_delito">Tipo de delito</label>
+        <label for="tipo_delito"><?php echo __('label_crime_type'); ?></label>
         <input
           type="text"
           id="tipo_delito"
           name="tipo_delito"
-          placeholder="Ej. Robo con fuerza"
+          placeholder="<?php echo __('placeholder_crime_type'); ?>"
           required>
       </div>
 
-      <!-- BLOQUE: DESCRIPCIÓN -->
       <div class="denuncia-field">
-        <label for="descripcion_hechos">Descripción de los hechos</label>
+        <label for="descripcion_hechos"><?php echo __('label_description'); ?></label>
         <textarea
           id="descripcion_hechos"
           name="descripcion_hechos"
-          placeholder="Describa detalladamente los hechos ocurridos"
+          placeholder="<?php echo __('placeholder_description'); ?>"
           required></textarea>
       </div>
 
-      <!-- BLOQUE: FECHA -->
       <div class="denuncia-field">
-        <label for="fecha_hechos">Fecha del suceso</label>
+        <label for="fecha_hechos"><?php echo __('label_date'); ?></label>
         <input
           type="date"
           id="fecha_hechos"
@@ -46,15 +43,14 @@
           required>
       </div>
 
-      <!-- ACCIONES -->
       <div class="denuncia-actions">
         <a href="/index.php?action=home"
            class="btn-secondary">
-          Volver a inicio
+          <?php echo __('btn_back_home'); ?>
         </a>
 
         <button type="submit" class="btn-primary">
-          Registrar denuncia
+          <?php echo __('btn_register_denuncia'); ?>
         </button>
       </div>
 

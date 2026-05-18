@@ -1,0 +1,20 @@
+@layer components {
+  .dashboard { @apply max-w-6xl mx-auto; }
+  .dashboard-card { @apply bg-(--white) border border-(--platinium) rounded-lg p-6 hover:shadow-md; }
+
+  .landing-container { @apply container mx-auto px-4 py-8 bg-(--snow) min-h-screen; }
+  .welcome-title { @apply text-4xl font-["Montserrat-Bold"] text-(--characol) mb-2; }
+  .welcome-subtitle { @apply text-lg text-(--cool-steel) mb-6 font-["Inter-Medium"]; }
+  
+  .stats-grid { @apply grid grid-cols-1 md:grid-cols-3 gap-6 mb-10; }
+  .stat-card { @apply bg-(--white) p-6 rounded-lg shadow-sm; }
+  .stat-card-blue { @apply border-t-4 border-(--blue-brand); }
+  .stat-card-gold { @apply border-t-4 border-(--goldenrod); }
+  .stat-card-title { @apply text-(--cool-steel) text-sm font-["Inter-Bold"]; }
+  .stat-card-value { @apply text-5xl font-["Montserrat-Bold"] text-(--characol) mt-2; }
+  .stat-card-sub { @apply text-xs text-(--cool-steel) font-["Inter-Medium"] italic; }
+  
+  .widgets-grid { @apply grid grid-cols-1 lg:grid-cols-2 gap-8; }
+  .widget-card { @apply bg-(--white) p-6 rounded-lg shadow-sm border border-(--platinium); }
+  .widget-title { @apply font-["Montserrat-Bold"] text-(--characol) mb-4 border-b pb-2; }
+}

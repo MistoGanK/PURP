@@ -35,5 +35,19 @@ services:
     depends_on:
       - app
 
+  # Tailwind Script
+  tailwind:
+    image: node:20-alpine
+    container_name: purp_tailwind
+    working_dir: /src
+    tty: true
+    stdin_open: true
+    volumes:
+     - .:/src:z
+     - /src/node_modules
+    # Comando
+    command: >
+     sh -c "npm install && ./node_modules/.bin/tailwindcss -i ./public/assets/tailwind/main.css -o ./public/assets/tailwind/mainOutput.css --watch --poll"     
+
 volumes:
   db_data:

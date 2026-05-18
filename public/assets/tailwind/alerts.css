@@ -1,0 +1,26 @@
+@layer components {
+  /* Contenedor base para cualquier alerta del sistema */
+  .alert {
+    @apply flex items-center gap-3 p-4 rounded-lg border text-sm font-["Inter-Medium"] mb-4;
+  }
+
+  /* Alerta de Éxito (Verde institucional) */
+  .alert-success {
+    @apply bg-(--white) text-(--sea-green) border-(--sea-green)/30;
+  }
+
+  /* Alerta de Error / Peligro (Carmesí) */
+  .alert-danger {
+    @apply bg-(--white) text-(--carmine) border-(--carmine)/30;
+  }
+
+  /* Alerta de Advertencia (Amarillo/Dorado) */
+  .alert-warning {
+    @apply bg-(--white) text-(--goldenrod) border-(--goldenrod)/30;
+  }
+
+  /* Icono dentro de la alerta para mantener proporciones */
+  .alert-icon {
+    @apply w-5 h-5 flex-shrink-0;
+  }
+}

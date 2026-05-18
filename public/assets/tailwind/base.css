@@ -1,0 +1,23 @@
+@layer base {
+  body {
+    @apply bg-(--snow) font-["Inter-Medium"] text-base text-(--black);
+    @apply min-h-screen flex flex-col;
+  }
+
+  main {
+    @apply flex-1;
+  }
+
+  footer {
+    @apply border-t border-(--platinium)
+           px-10 py-6 mt-auto
+           text-center text-xs text-(--state-grey)
+           bg-(--white);
+  }
+
+  button,
+  a,
+  select {
+    @apply cursor-pointer;
+  }
+}

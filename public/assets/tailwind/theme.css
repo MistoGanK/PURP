@@ -1,0 +1,22 @@
+@theme {
+  /* Brand */
+  --blue-brand: #2c468a;
+  --state-grey: #6b7a99;
+  --cerulean: #3a7ca5;
+
+  /* Neutral */
+  --platinium: #e6e8ee;
+  --snow: #fdfdfd;
+  --white: #ffffff;
+  --black: #010400;
+  --characol: #4a4a4a;
+  --cool-steel: #9aa1af;
+
+  /* Actions */
+  --carmine: #b02a37;
+  --deep-crismon: #8f1f2a;
+  --amaranth: #e04855;
+  --sea-green: #2f8f5b;
+  --goldenrod: #e0a800;
+  --tomatoe-jam: #c0392b;
+}
