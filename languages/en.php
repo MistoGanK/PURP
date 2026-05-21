@@ -1,5 +1,8 @@
 <?php
 return [
+    // System - Errors
+    'error_404'         => 'Page not found (Router 404)',
+
     // Header
     'header_title'       => 'UNIQUE POLICE REGISTRY PORTAL',
     'nav_home'           => 'Home',

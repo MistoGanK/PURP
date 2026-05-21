@@ -1,5 +1,8 @@
 <?php
 return [
+    // System - Errors
+    'error_404'         => 'Orrialdea ez da aurkitu (Router 404)',
+
     // Header
     'header_title'       => 'POLIZIA ERREGISTRO ATARI BAKARRA',
     'nav_home'           => 'Hasiera',

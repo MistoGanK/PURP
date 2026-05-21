@@ -1,5 +1,8 @@
 <?php
 return [
+    // System - Errors
+    'error_404'         => 'Page introuvable (erreur 404)',
+
     // Header
     'header_title'       => 'PORTAIL UNIQUE D\'ENREGISTREMENT POLICIER',
     'nav_home'           => 'Accueil',

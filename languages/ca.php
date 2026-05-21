@@ -1,5 +1,8 @@
 <?php
 return [
+    // System - Errors 
+    'error_404'         => 'Pàgina no trobada (Router 404)',
+
     // Header
     'header_title'       => 'PORTAL ÚNIC DE REGISTRE POLICIAL',
     'nav_home'           => 'Inici',
@@ -44,7 +47,7 @@ return [
     'guides_docs'        => 'Guies i Documents',
     'doc_user_manual'    => 'Manual d\'Usuari',
     'doc_operating_procedures' => 'Procediments Operatius',
-    
+
     // Landing - Latest News
     'latest_news' => 'Últimes Notícies',
     'news_protocol'      => 'Nou protocol d\'actuació aprovat',

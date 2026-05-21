@@ -1,5 +1,8 @@
 <?php
 return [
+    // System - Errors
+    'error_404'         => 'Pagina no encontrada (Router 404)',
+
     // Header
     'header_title'       => 'PORTAL ÚNICO DE REGISTRO POLICIAL',
     'nav_home'           => 'Inicio',
@@ -69,4 +72,3 @@ return [
     'btn_register_denuncia'    => 'Registrar denuncia',
 
 ];
-?>

@@ -1,5 +1,8 @@
 <?php
 return [
+    // System - Errors
+    'error_404'         => 'Páxina non atopada (Roteador 404)',
+
     // Header
     'header_title'       => 'PORTAL ÚNICO DE REXISTRO POLICIAL',
     'nav_home'           => 'Inicio',
@@ -55,7 +58,7 @@ return [
     'support'            => 'Soporte Técnico',
     'privacy'            => 'Política de Privacidade',
     'manual'             => 'Manual da Aplicación',
-    
+
     // Denuncias - Nueva Denuncia
     'title_new_denuncia'       => 'Nova denuncia',
     'subtitle_new_denuncia'    => 'Complete os datos requiridos para rexistrar uma nova denuncia',

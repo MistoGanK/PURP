@@ -12,8 +12,8 @@
     </header>
 
     <form method="POST"
-          action="/PURP/public/index.php?action=denuncia_guardar"
-          class="denuncia-form">
+      action="/PURP/public/index.php?action=denuncia_guardar"
+      class="denuncia-form">
 
       <div class="denuncia-field">
         <label for="tipo_delito"><?php echo __('label_crime_type'); ?></label>
@@ -45,7 +45,7 @@
 
       <div class="denuncia-actions">
         <a href="/index.php?action=home"
-           class="btn-secondary">
+          class="btn-secondary">
           <?php echo __('btn_back_home'); ?>
         </a>
 
