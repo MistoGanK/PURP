@@ -2,8 +2,19 @@
 
 class BaseModel
 {
+    /**
+     * @var null|PDO The shared PDO database connection instance.
+     */
     protected static $db;
 
+    /**
+     * Initializes and retrieves the singleton database connection.
+     * * Reads the configuration file, builds the DSN dynamically, 
+     * and instantiates a secure PDO instance with strict error modes 
+     * if no connection currently exists.
+     *
+     * @return PDO The active, shared PHP Data Object database connection.
+     */
     public static function connect()
     {
         if (self::$db === null) {

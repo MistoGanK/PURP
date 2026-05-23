@@ -3,6 +3,20 @@ require_once __DIR__ . '/BaseModel.php';
 
 class Denuncia extends BaseModel
 {
+    /**
+     * Inserts a new crime report into the database.
+     * * Prepares a secure SQL statement and binds the provided array data 
+     * to protect the application against SQL Injection vulnerabilities.
+     *
+     * @param array $data {
+     * The crime report payload fields.
+     * @type string $tipo_delito         The category or type of the crime.
+     * @type string $descripcion_hechos  The detailed description of the events.
+     * @type string $fecha_hechos        The timestamp/date when the events occurred.
+     * @type int    $id_usuario          The ID of the officer filing the report.
+     * }
+     * @return bool True on successful execution, false on failure.
+     */
     public function crear($data)
     {
         $db = self::connect();
@@ -30,6 +44,13 @@ class Denuncia extends BaseModel
         ]);
     }
 
+    /**
+     * Retrieves all crime reports ordered by date.
+     * * Performs an inner join with the users table to fetch the badge number 
+     * of the officer who registered each report, sorting from newest to oldest.
+     *
+     * @return array A multi-dimensional array containing all rows fetched as associative arrays.
+     */
     public function listar()
     {
         $db = self::connect();
@@ -42,4 +63,3 @@ class Denuncia extends BaseModel
         ")->fetchAll();
     }
 }
-?>

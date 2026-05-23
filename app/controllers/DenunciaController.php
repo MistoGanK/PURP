@@ -3,6 +3,10 @@ require_once __DIR__ . '/../models/Denuncia.php';
 
 class DenunciaController
 {
+    /**
+     * Loads Denuncia visual interface
+     * @return void
+     */
     public static function listar()
     {
         $model = new Denuncia();
@@ -10,12 +14,18 @@ class DenunciaController
 
         require __DIR__ . '/../views/denuncias/listar.php';
     }
-
+    /**
+     * Loads Crear visual interface
+     * @return void
+     */
     public static function crear()
     {
         require __DIR__ . '/../views/denuncias/crear.php';
     }
-
+    /**
+     * Saves a new Denuncia
+     * @return void
+     */
     public static function guardar()
     {
         $model = new Denuncia();
@@ -31,4 +41,3 @@ class DenunciaController
         exit;
     }
 }
-?>

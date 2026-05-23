@@ -11,13 +11,17 @@ error_reporting(E_ALL);
 $action = $_GET['action'] ?? 'home';
 $method = $_SERVER['REQUEST_METHOD'];
 
+// Helpers
 require_once __DIR__ . '/../app/helpers/router.php';
+require_once __DIR__ . '/../app/helpers/dump.php';
 
 require_once __DIR__ . '/../app/helpers/i18n.php';
 
+// Models
 require_once __DIR__ . '/../app/models/BaseModel.php';
 require_once __DIR__ . '/../app/models/User.php';
 
+// Controlers
 require_once __DIR__ . '/../app/controllers/AuthController.php';
 require_once __DIR__ . '/../app/controllers/HomeController.php';
 require_once __DIR__ . '/../app/controllers/DenunciaController.php';
@@ -32,8 +36,9 @@ $router->get('logout',            [AuthController::class, 'logout']);
 $router->get('denuncias',         [DenunciaController::class, 'listar']);
 $router->get('denuncia_nueva',    [DenunciaController::class, 'crear']);
 
-// Private
+// Private (POST)
 $router->post('do_login',         [AuthController::class, 'login']);
 $router->post('denuncia_guardar', [DenunciaController::class, 'guardar']);
 
 $router->dispatch($action, $method);
+

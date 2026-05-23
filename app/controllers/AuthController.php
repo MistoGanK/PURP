@@ -1,11 +1,20 @@
 <?php
 class AuthController
 {
+    /**
+     * Loads login visual interface
+     * @return void
+     */
     public static function showLogin()
     {
         require __DIR__ . '/../views/auth/login.php';
     }
 
+    /**
+     * Capture user login
+     * Verify credentials & hash
+     * @return never Redirect to home at success
+     */
     public static function login()
     {
         $placa = $_POST['numero_placa'] ?? '';
@@ -31,7 +40,11 @@ class AuthController
         header('Location: /PURP/public/index.php?action=home');
         exit;
     }
-
+    /**
+     * Destroy session & disconect user
+     * Redirect to home
+     * @return never
+     */
     public static function logout()
     {
         session_destroy();
@@ -39,4 +52,3 @@ class AuthController
         exit;
     }
 }
-?>
