@@ -10,7 +10,16 @@ return [
     'nav_reports'        => 'Informes',
     'nav_admin'          => 'Administración',
     'nav_logout'         => 'Pechar Sesión',
+    'guest'              => 'Convidado',
 
+    // Login 
+    'login_page_title'  => 'Acceso ao sistema',
+    'badge_number'      => 'Número de placa',
+    'badge_placeholder' => 'Ex. 12345',
+    'password_label'    => 'Contrasinal',
+    'btn_login'         => 'Entrar',
+    'auth_fail'         => 'Usuario ou contrasinal incorrectos',
+    
     // Landing - Bienvenida
     'landing_welcome'    => 'Benvido ao Portal Único de Rexistro Policial',
     'landing_subtitle'   => 'Centraliza e xestiona as denuncias de xeito eficiente e seguro.',
@@ -39,9 +48,6 @@ return [
     'card_stats'         => 'Estatísticas Recentes',
     'label_month_total'  => 'Total Mes:',
     'label_resolved'     => 'Resolto:',
-
-    // Landing - User profile
-    'word_official'      => 'Oficial',
 
     // Landing - Guides & Documents
     'doc_user_manual'    => 'Manual de Usuario',

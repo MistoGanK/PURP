@@ -1,4 +1,54 @@
 @layer components {
-  .login-wrapper { @apply min-h-screen flex items-center justify-center p-4; }
-  .login-card { @apply w-full max-w-md bg-(--white) p-10 rounded-lg border border-(--platinium) shadow-md text-center; }
+  .login-container {
+    @apply flex items-center justify-center w-full px-4;
+  }
+  .login-card {
+    @apply bg-(--white) rounded-xl shadow-md border border-(--platinium) mx-4;
+
+    @apply w-full md:max-w-xl lg:max-w-3xl;
+
+    @apply md:min-h-[500px] lg:min-h-[580px];
+
+    @apply p-6 md:p-12 lg:p-16;
+
+    @apply flex flex-col justify-center;
+  }
+
+  .login-brand {
+    @apply text-center mb-6 lg:mb-10;
+  }
+
+  .login-title {
+    @apply font-["Montserrat-Bold"] text-(--blue-brand) mb-1
+           text-xl md:text-2xl lg:text-3xl;
+  }
+
+  .login-subtitle {
+    @apply font-["Montserrat-Semibold"] text-(--state-grey) uppercase tracking-wider
+           text-xs lg:text-sm;
+  }
+
+  .login-form {
+    @apply space-y-4 md:space-y-6 lg:space-y-8;
+  }
+
+  .login-field {
+    @apply flex flex-col gap-1.5;
+  }
+
+  .login-field label {
+    @apply text-xs font-["Inter-Bold"] text-(--characol) uppercase tracking-wider;
+  }
+
+  .login-field input {
+    @apply w-full px-4 py-2.5
+           bg-(--white) border border-(--platinium) rounded-md
+           font-["Inter-Medium"] text-sm text-(--black)
+           transition-colors duration-150
+           placeholder:text-(--cool-steel);
+  }
+
+  .login-field input:focus {
+    @apply outline-none border-(--blue-brand) ring-1 ring-(--blue-brand);
+  }
 }

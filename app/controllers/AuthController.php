@@ -23,13 +23,13 @@ class AuthController
         $userModel = new User();
         $user = $userModel->findByPlaca($placa);
 
-        if (!$user) {
-            die('Usuario no encontrado');
+        if (!$user || !password_verify($password, $user['password_hash'])) {
+            $_SESSION['login_error'] = 'auth_fail';
+
+            header('Location: /index.php?action=home');
+            exit;
         }
 
-        if (!password_verify($password, $user['password_hash'])) {
-            die('Contraseña incorrecta');
-        }
 
         $_SESSION['user'] = [
             'id'     => $user['id_usuario'],
@@ -37,7 +37,7 @@ class AuthController
             'rol'    => $user['rol']
         ];
 
-        header('Location: /PURP/public/index.php?action=home');
+        header('Location: /index.php?action=home');
         exit;
     }
     /**
@@ -48,7 +48,7 @@ class AuthController
     public static function logout()
     {
         session_destroy();
-        header('Location: /PURP/public/index.php?action=login');
+        header('Location: /index.php?action=home');
         exit;
     }
 }

@@ -10,6 +10,15 @@ return [
     'nav_reports'        => 'Reportes',
     'nav_admin'          => 'Administración',
     'nav_logout'         => 'Cerrar Sesión',
+    'guest'              => 'Invitado',
+
+    // Login 
+    'login_page_title'  => 'Acceso al sistema',
+    'badge_number'      => 'Número de placa',
+    'badge_placeholder' => 'Ej. 12345',
+    'password_label'    => 'Contraseña',
+    'btn_login'         => 'Entrar',
+    'auth_fail'         => 'Usuario o contraseña incorrecta',
 
     // Landing - Bienvenida
     'landing_welcome'    => 'Bienvenido al Portal Único de Registro Policial',
@@ -39,9 +48,6 @@ return [
     'card_stats'         => 'Estadísticas Recientes',
     'label_month_total'  => 'Total Mes:',
     'label_resolved'     => 'Resueltos:',
-
-    // Landing - User profile
-    'word_official'      => 'Oficial',
 
     // Landing - Guides & Documents
     'guides_docs'        => 'Guías y Documentos',

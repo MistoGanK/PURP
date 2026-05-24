@@ -1,0 +1,14 @@
+@layer components {
+  .public-header {
+    @apply w-full flex justify-end p-6;
+  }
+
+  .lang-select {
+    @apply border border-(--platinium) rounded px-3 py-1 
+           bg-(--white) text-(--black) text-sm font-["Inter-Medium"];
+  }
+
+  .lang-select option {
+    @apply text-(--black) bg-(--white);
+  }
+}

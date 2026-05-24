@@ -1,5 +1,11 @@
 @layer components {
-  .denuncias-screen { @apply max-w-6xl mx-auto py-12; }
-  .denuncias-list { @apply bg-(--white) border border-(--platinium) rounded-lg overflow-hidden; }
-  .denuncia-item { @apply p-6 border-b border-(--platinium) last:border-b-0; }
+  .denuncias-screen {
+    @apply max-w-6xl mx-auto py-12;
+  }
+  .denuncias-list {
+    @apply bg-(--white) border border-(--platinium) rounded-lg overflow-hidden;
+  }
+  .denuncia-item {
+    @apply p-6 border-b border-(--platinium) last:border-b-0;
+  }
 }

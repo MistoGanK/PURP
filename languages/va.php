@@ -27,21 +27,21 @@ return [
     'btn_view_denuncias' => 'Consultar Denúncies',
 
     // Landing - Tarjetas de Estadísticas
-    'card_registered'    => 'Denúncies Registrades Avui',
+    'card_registered'    => 'Denúncies Registrades Hui',
     'card_in_progress'   => 'Denúncies en Procés',
-    'label_today'        => 'Avui',
+    'label_today'        => 'Hui',
     'label_pending'      => 'En Tràmit',
 
     // Landing - Alertas
     'card_alerts'        => 'Alertes Recents',
     'alert_system'       => 'Sistema: Actualització programada a les 22:00',
     'alert_warning'      => 'Avís: Informe de robatori al Barri Centre',
-    'link_view_more'     => 'Veure més >',
+    'link_view_more'     => 'Vore més >',
 
     // Landing - Buscador
     'card_search'        => 'Cerca Ràpida',
     'label_case_number'  => 'Cercar per Nº de Cas',
-    'placeholder_case'   => 'Introdueixi número de cas...',
+    'placeholder_case'   => 'Introduïsca número de cas...',
     'btn_search'         => 'Cercar',
 
     // Landing - Gráfico
@@ -55,20 +55,20 @@ return [
     'doc_operating_procedures' => 'Procediments Operatius',
 
     // Landing - Latest News
-    'latest_news' => 'Últimes Notícies',
+    'latest_news'        => 'Últimes Notícies',
     'news_protocol'      => 'Nou protocol d\'actuació aprovat',
     'news_training'      => 'Capacitació sobre PURP en curs',
 
     // Footer
-    'rights_reserved' => 'Tots els drets reservats.',
-    'app_version'     => 'Versió del Sistema:',
-    'support'         => 'Suport Tècnic',
-    'privacy'         => 'Política de Privacitat',
-    'manual'          => 'Manual de l\'Aplicació',
+    'rights_reserved'    => 'Tots els drets reservats.',
+    'app_version'        => 'Versió del Sistema:',
+    'support'            => 'Suport Tècnic',
+    'privacy'            => 'Política de Privacitat',
+    'manual'             => 'Manual de l\'Aplicació',
 
     // Denuncias - Nueva Denuncia
     'title_new_denuncia'       => 'Nova denúncia',
-    'subtitle_new_denuncia'    => 'Ompliu les dades requerides per registrar una nova denúncia',
+    'subtitle_new_denuncia'    => 'Ompliu les dades requerides per a registrar una nova denúncia',
     'label_crime_type'         => 'Tipus de delicte',
     'placeholder_crime_type'   => 'Ex. Robatori amb força',
     'label_description'        => 'Descripció dels fets',
@@ -76,5 +76,4 @@ return [
     'label_date'               => 'Data del succés',
     'btn_back_home'            => 'Tornar a l\'inici',
     'btn_register_denuncia'    => 'Registrar denúncia',
-
 ];

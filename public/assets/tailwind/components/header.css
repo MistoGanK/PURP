@@ -1,17 +1,43 @@
 @layer components {
-  .header-main { @apply bg-(--blue-brand) text-(--white); }
-  .header-top { @apply p-4 flex items-center gap-4; }
-  .header-title { @apply font-["Montserrat-Bold"] text-xl tracking-wide; }
-  .header-subtitle { @apply text-sm font-["Inter-Italic"] opacity-80; }
-  
-  .header-bottom { @apply border-t border-(--white)/10 px-4 py-2 flex justify-between items-center text-lg; }
-  .main-nav { @apply flex gap-6; }
-  .nav-link { @apply hover:text-(--platinium) transition; }
-  .nav-link-active { @apply border-b-2 border-(--white) pb-1 font-["Inter-Bold"]; }
-  
-  .user-actions { @apply flex items-center gap-6; }
-  .lang-widget { @apply flex items-center gap-2 text-sm bg-(--white)/10 px-2 py-1 rounded border border-(--white)/20; }
-  .lang-select { @apply bg-transparent text-(--white) cursor-pointer focus:outline-none; }
-  .user-profile { @apply flex items-center gap-2 cursor-pointer hover:text-(--platinium); }
-  .logout-link { @apply hover:text-(--tomatoe-jam) font-["Inter-Semibold"] transition; }
+  .header-main {
+    @apply bg-(--blue-brand) text-(--white);
+  }
+  .header-top {
+    @apply p-4 flex items-center gap-4;
+  }
+  .header-title {
+    @apply font-["Montserrat-Bold"] text-xl tracking-wide;
+  }
+  .header-subtitle {
+    @apply text-sm font-["Inter-Italic"] opacity-80;
+  }
+
+  .header-bottom {
+    @apply border-t border-(--white)/10 px-4 py-2 flex justify-between items-center text-lg;
+  }
+  .main-nav {
+    @apply flex gap-6;
+  }
+  .nav-link {
+    @apply hover:text-(--platinium) transition;
+  }
+  .nav-link-active {
+    @apply border-b-2 border-(--white) pb-1 font-["Inter-Bold"];
+  }
+
+  .user-actions {
+    @apply flex items-center gap-6;
+  }
+  .lang-widget {
+    @apply flex items-center gap-2 text-sm bg-(--white)/10 px-2 py-1 rounded border border-(--white)/20;
+  }
+  .lang-select {
+    @apply bg-transparent text-(--white) cursor-pointer focus:outline-none;
+  }
+  .user-profile {
+    @apply flex items-center gap-2 cursor-pointer hover:text-(--platinium);
+  }
+  .logout-link {
+    @apply hover:text-(--tomatoe-jam) font-["Inter-Semibold"] transition;
+  }
 }

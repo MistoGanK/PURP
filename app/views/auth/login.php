@@ -1,27 +1,28 @@
-<?php require __DIR__ . '/../layout/header.php'; ?>
-<div class="login-wrapper">
-  <div class="login-card">
+<?php require_once __DIR__ . '/../layout/header_public.php'; ?>
 
-    <h1 class="login-title">Acceso al sistema</h1>
-    <p class="login-subtitle">Portal Único de Registro Policial</p>
+<div class="login-card">
+    <div class="login-brand">
+        <h1 class="login-title"><?php echo __('login_page_title'); ?></h1>
+        <h2 class="login-subtitle">
+            <?php echo __('header_title'); ?>
+        </h2>
+    </div>
 
-    <form method="POST" action="/PURP/public/index.php?action=do_login">
+    <form action="index.php?action=do_login" method="POST" class="login-form">
+        <div class="login-field">
+            <label><?php echo __('badge_number'); ?></label>
+            <input type="text" name="numero_placa" required placeholder="<?php echo __('badge_placeholder'); ?>">
+        </div>
+        
+        <div class="login-field">
+            <label><?php echo __('password_label'); ?></label>
+            <input type="password" name="password_hash" required placeholder="••••••••">
+        </div>
 
-      <div class="form-group">
-        <label>Número de placa</label>
-        <input type="text" name="numero_placa" required>
-      </div>
-
-      <div class="form-group">
-        <label>Contraseña</label>
-        <input type="password" name="password" required>
-      </div>
-
-      <button type="submit" class="btn-primary">
-        Entrar
-      </button>
-
+        <button type="submit" class="btn-primary w-full">
+            <?php echo __('btn_login'); ?>
+        </button>
     </form>
-  </div>
 </div>
-<?php require __DIR__ . '/../layout/footer.php'; ?>
+
+<?php require_once __DIR__ . '/../layout/footer_public.php'; ?>

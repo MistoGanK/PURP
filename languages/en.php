@@ -10,6 +10,15 @@ return [
     'nav_reports'        => 'Reports',
     'nav_admin'          => 'Administration',
     'nav_logout'         => 'Log Out',
+    'guest'              => 'Guest',
+
+    // Login
+    'login_page_title'  => 'System Access',
+    'badge_number'      => 'Badge number',
+    'badge_placeholder' => 'E.g. 12345',
+    'password_label'    => 'Password',
+    'btn_login'         => 'Login',
+    'auth_fail'         => 'Incorrect username or password',
 
     // Landing - Bienvenida
     'landing_welcome'    => 'Welcome to the Unique Police Registry Portal',
@@ -39,9 +48,6 @@ return [
     'card_stats'         => 'Recent Statistics',
     'label_month_total'  => 'Month Total:',
     'label_resolved'     => 'Resolved:',
-
-    // Landing - User profile
-    'word_official'      => 'Officer',
 
     // Landing - Guides & Documents
     'guides_docs'        => 'Guides and Documents',

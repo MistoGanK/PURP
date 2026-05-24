@@ -3,6 +3,16 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+// Not loggin permissions
+if (!isset($_SESSION['user'])) {
+    $public_actions = ['login', 'do_login', 'set_lang'];
+    $current_action = $_GET['action'] ?? 'home';
+
+    if (!in_array($current_action, $public_actions)) {
+        header('Location: index.php?action=login');
+        exit;
+    }
+}
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -41,4 +51,3 @@ $router->post('do_login',         [AuthController::class, 'login']);
 $router->post('denuncia_guardar', [DenunciaController::class, 'guardar']);
 
 $router->dispatch($action, $method);
-

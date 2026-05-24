@@ -7,9 +7,18 @@ return [
     'header_title'       => 'POLIZIA ERREGISTRO ATARI BAKARRA',
     'nav_home'           => 'Hasiera',
     'nav_queries'        => 'Kontsultak',
-    'nav_reports' => 'Txostenak',
+    'nav_reports'        => 'Txostenak',
     'nav_admin'          => 'Administrazioa',
     'nav_logout'         => 'Saioa Itxi',
+    'guest'              => 'Gonbidatu',
+
+    // Login 
+    'login_page_title'  => 'Sistemarako sarbidea',
+    'badge_number'      => 'Plaka-zenbakia',
+    'badge_placeholder' => 'Adib. 12345',
+    'password_label'    => 'Pasahitza',
+    'btn_login'         => 'Sartu',
+    'auth_fail'         => 'Erabiltzaile edo pasahitz okerra',
 
     // Landing - Bienvenida
     'landing_welcome'    => 'Ongi etorri Polizia Erregistro Atari Bakarrera',
@@ -39,9 +48,6 @@ return [
     'card_stats'         => 'Azken Estatistikak',
     'label_month_total'  => 'Hilabeteko Guztira:',
     'label_resolved'     => 'Ebatziak:',
-
-    // Landing - User profile
-    'word_official'      => 'Ofiziala',
 
     // Landing - Guides & Documents
     'doc_user_manual'    => 'Erabiltzailearen Eskuliburua',

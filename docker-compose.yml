@@ -4,6 +4,8 @@ services:
     image: mariadb:10.11
     container_name: purp_db
     restart: always
+    ports:
+     - "3306:3306"
     environment:
       MYSQL_DATABASE: purpdb
       MYSQL_ROOT_PASSWORD: purp2077

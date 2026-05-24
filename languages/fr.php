@@ -10,6 +10,14 @@ return [
     'nav_reports'        => 'Rapports',
     'nav_admin'          => 'Administration',
     'nav_logout'         => 'Se Déconnecter',
+    'guest'              => 'Invité',
+
+    // Login 
+    'badge_number'      => 'Numéro de matricule',
+    'badge_placeholder' => 'Ex. 12345',
+    'password_label'    => 'Mot de passe',
+    'btn_login'         => 'Se connecter',
+    'auth_fail'         => 'Identifiant ou mot de passe incorrect',
 
     // Landing - Bienvenida
     'landing_welcome'    => 'Bienvenue sur le Portail Unique d\'Enregistrement Policier',
@@ -39,9 +47,6 @@ return [
     'card_stats'         => 'Statistiques Récentes',
     'label_month_total'  => 'Total Mois :',
     'label_resolved'     => 'Résolus :',
-
-    // Landing - User profile
-    'word_official' => 'Officier',
 
     // Landing - Guides & Documents
     'guides_docs'        => 'Guides et Documents',

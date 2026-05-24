@@ -36,7 +36,7 @@
   .denuncia-actions {
     @apply flex flex-col sm:flex-row justify-between items-center gap-4 mt-6 pt-6 border-t border-(--platinium);
   }
-  
+
   .denuncia-actions a,
   .denuncia-actions button {
     @apply w-full sm:w-auto md:text-lg md:py-3.5 md:px-8 font-medium;

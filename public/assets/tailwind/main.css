@@ -16,6 +16,8 @@
 /* Componentes de Estructura Compleja */
 @import "./components/layout.css";
 @import "./components/header.css";
+@import "./components/header_public.css";
+@import "./components/footer_public.css";
 @import "./components/widgets.css";
 
 /* Vistas de Pantalla Específicas */
