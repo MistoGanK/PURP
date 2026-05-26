@@ -31,7 +31,7 @@ class DenunciaController
         $model = new Denuncia();
 
         $model->crear([
-            'tipo_delito'         => $_POST['tipo_delito'],
+            'tipo_delito'        => $_POST['tipo_delito'],
             'descripcion_hechos' => $_POST['descripcion_hechos'],
             'fecha_hechos'       => $_POST['fecha_hechos'],
             'id_usuario'         => $_SESSION['user']['id']

@@ -24,4 +24,30 @@ class User extends BaseModel
 
         return $stmt->fetch();
     }
+    /**
+     * Creates a new User
+     * @param string $numeroPlaca $passwordHash, $userTipe, 
+     * @return void
+     */
+
+    public function insertUser(array $data)
+    {
+        $db = self::connect();
+
+        $sql = "INSERT INTO usuarios (dni, numero_placa, nombre, apellidos, password_hash, id_categoria, estado_profesional, tipo_usuario) 
+                VALUES (:dni, :numero_placa, :nombre, :apellidos, :password_hash, :id_categoria, :estado_profesional, :tipo_usuario)";
+
+        $stmt = $db->prepare($sql);
+
+        return $stmt->execute([
+            'dni'                => $data['dni'],
+            'numero_placa'       => $data['numero_placa'],
+            'nombre'             => $data['nombre'],
+            'apellidos'          => $data['apellidos'],
+            'password_hash'      => $data['password_hash'],
+            'id_categoria'       => $data['id_categoria'],
+            'estado_profesional' => $data['estado_profesional'],
+            'tipo_usuario'       => $data['tipo_usuario']
+        ]);
+    }
 }

@@ -25,5 +25,3 @@
       </select>
     </div>
   </header>
-
-  <main class="login-container">

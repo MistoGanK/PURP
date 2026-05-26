@@ -75,4 +75,19 @@ return [
     'label_date'               => 'Data do suceso',
     'btn_back_home'            => 'Volver ao inicio',
     'btn_register_denuncia'    => 'Rexistrar denuncia',
+
+    // Denuncia - Enums
+    'status_initial'        => 'En Instancia Inicial',
+    'status_in_progress'    => 'En Curso',
+    'status_judicialized'   => 'Xudicializado',
+    'status_archived_prov'  => 'Arquivado Provisional',
+    'status_archived_def'   => 'Arquivado Definitivo',
+    'status_resolved'       => 'Resolto',
+
+    // User - Enums
+    'role_super_admin'      => 'Superadministrador',
+    'role_admin'            => 'Administrador',
+    'role_supervisor'       => 'Supervisor Policial',
+    'role_agent'            => 'Axente Operador',
+    'role_inquiry'          => 'Persoal de Consulta',
 ];

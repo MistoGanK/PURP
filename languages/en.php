@@ -77,4 +77,19 @@ return [
     'btn_back_home'            => 'Back to Home',
     'btn_register_denuncia'    => 'Register Report',
 
+    // Denuncia - Enums
+    'status_initial'        => 'In Initial Stage',
+    'status_in_progress'    => 'In Progress',
+    'status_judicialized'   => 'Judicialized',
+    'status_archived_prov'  => 'Provisionally Archived',
+    'status_archived_def'   => 'Definitively Archived',
+    'status_resolved'       => 'Resolved',
+
+    // User - Enums
+    'role_super_admin'      => 'Super Administrator',
+    'role_admin'            => 'Administrator',
+    'role_supervisor'       => 'Police Supervisor',
+    'role_agent'            => 'Operator Agent',
+    'role_inquiry'          => 'Inquiry Staff',
+
 ];

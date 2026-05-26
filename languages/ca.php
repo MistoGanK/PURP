@@ -50,12 +50,12 @@ return [
     'label_resolved'     => 'Resolts:',
 
     // Landing - Guides & Documents
-    'guides_docs'        => 'Guies i Documents',
-    'doc_user_manual'    => 'Manual d\'Usuari',
-    'doc_operating_procedures' => 'Procediments Operatius',
+    'guides_docs'               => 'Guies i Documents',
+    'doc_user_manual'           => 'Manual d\'Usuari',
+    'doc_operating_procedures'  => 'Procediments Operatius',
 
     // Landing - Latest News
-    'latest_news' => 'Últimes Notícies',
+    'latest_news'        => 'Últimes Notícies',
     'news_protocol'      => 'Nou protocol d\'actuació aprovat',
     'news_training'      => 'Capacitació sobre PURP en curs',
 
@@ -76,5 +76,20 @@ return [
     'label_date'               => 'Data del succés',
     'btn_back_home'            => 'Tornar a l\'inici',
     'btn_register_denuncia'    => 'Registrar denúncia',
+
+    // Denuncia - Enums
+    'status_initial'        => 'En Instància Inicial',
+    'status_in_progress'    => 'En Curs',
+    'status_judicialized'   => 'Judicialitzat',
+    'status_archived_prov'  => 'Arxivat Provisional',
+    'status_archived_def'   => 'Arxivat Definitiu',
+    'status_resolved'       => 'Resolt',
+
+    // User - Enums
+    'role_super_admin'      => 'Superadministrador',
+    'role_admin'            => 'Administrador',
+    'role_supervisor'       => 'Supervisor Policial',
+    'role_agent'            => 'Agent Operador',
+    'role_inquiry'          => 'Personal de Consulta',
 
 ];

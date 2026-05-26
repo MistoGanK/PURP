@@ -30,17 +30,18 @@ class AuthController
             exit;
         }
 
-
+        $role = tipoUsuario::tryFrom($user['tipo_usuario']);
         $_SESSION['user'] = [
-            'id'     => $user['id_usuario'],
-            'nombre' => $user['nombre'],
-            'rol'    => $user['rol']
+            'id'            => $user['id_usuario'],
+            'agent_plate'   => $user['numero_placa'],
+            'nombre'        => $user['nombre'],
+            'rol'           => $role ? $role->name : 'CONSULTA'
         ];
 
         header('Location: /index.php?action=home');
         exit;
     }
-    /**
+    /** 
      * Destroy session & disconect user
      * Redirect to home
      * @return never

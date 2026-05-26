@@ -1,7 +1,7 @@
 /* main.css - Archivo raíz de compilación */
 
 /* Núcleo de Tailwind */
-@import "tailwindcss"; 
+@import "tailwindcss";
 
 /* Configuración Global y Configuración de Tema (Con ruta explícita) */
 @import "./theme.css";

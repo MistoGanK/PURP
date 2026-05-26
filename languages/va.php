@@ -76,4 +76,19 @@ return [
     'label_date'               => 'Data del succés',
     'btn_back_home'            => 'Tornar a l\'inici',
     'btn_register_denuncia'    => 'Registrar denúncia',
+
+    // Denuncia - Enums
+    'status_initial'        => 'En Instància Inicial',
+    'status_in_progress'    => 'En Curs',
+    'status_judicialized'   => 'Judicialitzat',
+    'status_archived_prov'  => 'Arxivat Provisional',
+    'status_archived_def'   => 'Arxivat Definitiu',
+    'status_resolved'       => 'Resolt',
+
+    // User - Enums
+    'role_super_admin'      => 'Superadministrador',
+    'role_admin'            => 'Administrador',
+    'role_supervisor'       => 'Supervisor Policial',
+    'role_agent'            => 'Agent Operador',
+    'role_inquiry'          => 'Personal de Consulta',
 ];

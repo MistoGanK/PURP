@@ -75,4 +75,19 @@ return [
     'label_date'               => 'Gertaeraren data',
     'btn_back_home'            => 'Itzuli hasierara',
     'btn_register_denuncia'    => 'Salaketa erregistratu',
+
+    // Denuncia - Enums
+    'status_initial'        => 'Hasierako Instantzian',
+    'status_in_progress'    => 'Izapidetzan',
+    'status_judicialized'   => 'Judizializatua',
+    'status_archived_prov'  => 'Behin-behinean Artxibatua',
+    'status_archived_def'   => 'Betiko Artxibatua',
+    'status_resolved'       => 'Ebatzia',
+
+    // User - Enums
+    'role_super_admin'      => 'Super-administratzailea',
+    'role_admin'            => 'Administratzailea',
+    'role_supervisor'       => 'Polizia-ikuskatzailea',
+    'role_agent'            => 'Agente Operadorea',
+    'role_inquiry'          => 'Kontsulta-langileak',
 ];

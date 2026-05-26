@@ -77,4 +77,19 @@ return [
     'btn_back_home'            => 'Volver a inicio',
     'btn_register_denuncia'    => 'Registrar denuncia',
 
+    // Denuncia - Enums
+    'status_initial'        => 'En Instancia Inicial',
+    'status_in_progress'    => 'En Curso',
+    'status_judicialized'   => 'Judicializado',
+    'status_archived_prov'  => 'Archivado Provisional',
+    'status_archived_def'   => 'Archivado Definitivo',
+    'status_resolved'       => 'Resuelto',
+
+    // User - Enums
+    'role_super_admin'      => 'Super Administrador',
+    'role_admin'            => 'Administrador',
+    'role_supervisor'       => 'Supervisor Policial',
+    'role_agent'            => 'Agente Operador',
+    'role_inquiry'          => 'Personal de Consulta',
+
 ];

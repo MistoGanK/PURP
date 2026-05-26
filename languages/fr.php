@@ -76,4 +76,19 @@ return [
     'btn_back_home'            => 'Retour à l\'accueil',
     'btn_register_denuncia'    => 'Enregistrer la plainte',
 
+    // Denuncia - Enums
+    'status_initial'        => 'En Instance Initiale',
+    'status_in_progress'    => 'En Cours',
+    'status_judicialized'   => 'Judiciarisé',
+    'status_archived_prov'  => 'Archivé Provisoirement',
+    'status_archived_def'   => 'Archivé Définitivement',
+    'status_resolved'       => 'Résolu',
+
+    // User - Enums
+    'role_super_admin'      => 'Super Administrateur',
+    'role_admin'            => 'Administrateur',
+    'role_supervisor'       => 'Superviseur de Police',
+    'role_agent'            => 'Agent Opérateur',
+    'role_inquiry'          => 'Personnel de Consultation',
+
 ];
