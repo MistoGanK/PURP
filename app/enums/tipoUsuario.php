@@ -22,4 +22,19 @@ enum tipoUsuario: int
             self::CONSULTA    => __('role_inquiry'),
         };
     }
+
+    /**
+     * Returns mapped tipo_usuario on a JSON-OBJECT
+     */
+    public static function jsonOptions(): array
+    {
+        $options = [];
+        foreach (self::cases() as $case) {
+            $options[] = [
+                'value' => $case->value,
+                'label' => $case->label()
+            ];
+        };
+        return $options;
+    }
 }

@@ -10,7 +10,7 @@ enum denunciasEstadoLegal: int
   case  RESUELTO                = 60;
 
   /**
-   * Returns mapped estado_legal
+   * Returns String estado_legal
    * @return string
    */
   public function label(): string
@@ -23,5 +23,19 @@ enum denunciasEstadoLegal: int
       self::ARCHIVADO_DEFINITIVO  => __('status_archived_def'),
       self::RESUELTO              => __('status_resolved')
     };
+  }
+  /**
+   * Return mapped estado_legal on a JSON-OBJECT
+   */
+  public static function jsonOptions(): array
+  {
+    $options = [];
+    foreach (self::cases() as $case) {
+      $options[] = [
+        'value' => $case->value,
+        'label' => $case->label()
+      ];
+    };
+    return $options;
   }
 }

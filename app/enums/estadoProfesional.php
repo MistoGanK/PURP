@@ -9,7 +9,7 @@ enum estadoProfesional: int
   case JUBILADO             = 50;
 
   /**
-   * Returns mapped estado_profesional
+   * Returns String estado_profesional
    * @return string
    */
   public function label(): string
@@ -21,5 +21,20 @@ enum estadoProfesional: int
       self::SANCIONADO            => __('state_sanctioned'),
       self::JUBILADO              => __('state_retired')
     };
+  }
+
+  /**
+   * Returns mapped estado_profesioanl on a JSON-OBJECT
+   */
+  public static function jsonOptions(): array
+  {
+    $options = [];
+    foreach (self::cases() as $case) {
+      $options[] = [
+        'value' => $case->value,
+        'label' => $case->label()
+      ];
+    };
+    return $options;
   }
 }

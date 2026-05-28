@@ -21,9 +21,9 @@
 @import "./components/widgets.css";
 
 /* Vistas de Pantalla Específicas */
-@import "./views/login.css";
 @import "./views/dashboard.css";
 @import "./views/denuncias.css";
+@import "./views/form.css";
 
 /* Vista Nueva Denuncia */
 @import "./views/denuncia_nueva.css";
