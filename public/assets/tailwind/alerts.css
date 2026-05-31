@@ -1,26 +1,33 @@
 @layer components {
-  /* Contenedor base para cualquier alerta del sistema */
+  .alert-container {
+    @apply fixed top-10 left-1/2 -translate-x-1/2 z-50 flex flex-col gap-3 items-center pointer-events-none;
+  }
+
   .alert {
-    @apply flex items-center gap-3 p-4 rounded-lg border text-sm font-["Inter-Medium"] mb-4;
+    @apply pointer-events-auto;
+
+    @apply flex items-center gap-4 px-6 py-4 min-w-[340px] max-w-[90vw];
+
+    @apply bg-(--white) rounded-xl shadow-2xl border border-(--platinium);
+
+    @apply text-base font-(--inter-medium) text-(--characol) transition-all duration-300;
   }
 
-  /* Alerta de Éxito (Verde institucional) */
+  /* Success Alert */
   .alert-success {
-    @apply bg-(--white) text-(--sea-green) border-(--sea-green)/30;
+    @apply border-l-[6px] border-l-(--sea-green) text-(--sea-green);
   }
 
-  /* Alerta de Error / Peligro (Carmesí) */
+  /* Error Alert */
   .alert-danger {
-    @apply bg-(--white) text-(--carmine) border-(--carmine)/30;
+    @apply border-l-[6px] border-l-(--carmine) text-(--carmine);
+  }
+  .alert-danger-text {
+    @apply text-(--carmine);
   }
 
-  /* Alerta de Advertencia (Amarillo/Dorado) */
+  /* Warning Alert */
   .alert-warning {
-    @apply bg-(--white) text-(--goldenrod) border-(--goldenrod)/30;
-  }
-
-  /* Icono dentro de la alerta para mantener proporciones */
-  .alert-icon {
-    @apply w-5 h-5 flex-shrink-0;
+    @apply border-l-[6px] border-l-(--goldenrod) text-(--goldenrod);
   }
 }

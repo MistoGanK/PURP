@@ -24,8 +24,8 @@ return [
     'label_apellidos'       => 'Cognoms',
     'label_dni'             => 'DNI / NIE',
     'label_role'            => 'Ròl deth sistema',
-    'label_category'        => 'Categoria policiala (ID)',
-    'label_status'          => 'Estat professionau (ID)',
+    'label_category'        => 'Categoria policiala',
+    'label_status'          => 'Estat professionau',
     'btn_register_user'     => 'Registrar Agent',
     'category_agent'        => 'Agent',
     'category_official'     => 'Oficiau',
@@ -44,7 +44,12 @@ return [
     'state_duty_suspended'  => 'Sospendut de foncions',
     'state_sanctioned'      => 'Sancionat',
     'state_retired'         => 'Jubilat',
+    'success_register'      => 'Usuari registrat damb èxit.',
+    'unsuccess_register'    => 'Error en registrar er usuari. Per favor, intentatz-ho de nau.',
 
+    // Errors Messages
+    'error_duplicate_badge' => 'Eth numèro de placa introduït dejà ei registrat en sistèma.',
+    'error_duplicate_dni'   => 'Eth DNI/NIE introduït dejà ei registrat en sistèma.',
 
     // Landing - Bienvenida
     'landing_welcome'    => 'Benvenut ath Portau Unic de Registre Policiau',

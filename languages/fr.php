@@ -24,8 +24,8 @@ return [
     'label_apellidos'       => 'Nom',
     'label_dni'             => 'DNI / NIE',
     'label_role'            => 'Rôle du système',
-    'label_category'        => 'Catégorie de police (ID)',
-    'label_status'          => 'Statut professionnel (ID)',
+    'label_category'        => 'Catégorie de police',
+    'label_status'          => 'Statut professionnel',
     'btn_register_user'     => "Enregistrer l'agent",
     'category_agent'        => 'Agent',
     'category_official'     => 'Officier',
@@ -44,6 +44,12 @@ return [
     'state_duty_suspended'  => 'Suspendu de fonctions',
     'state_sanctioned'      => 'Sanctionné',
     'state_retired'         => 'Retraité',
+    'success_register'      => 'Utilisateur enregistré avec succès.',
+    'unsuccess_register'    => "Erreur lors de l'enregistrement de l'utilisateur. Veuillez réessayer.",
+
+    // Errors Messages
+    'error_duplicate_badge' => 'Le numéro de matricule saisi est déjà enregistré dans le système.',
+    'error_duplicate_dni'   => 'Le DNI/NIE saisi est déjà enregistré dans le système.',
 
     // Landing - Bienvenida
     'landing_welcome'    => 'Bienvenue sur le Portail Unique d\'Enregistrement Policier',

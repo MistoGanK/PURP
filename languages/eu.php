@@ -24,8 +24,8 @@ return [
     'label_apellidos'       => 'Abizenak',
     'label_dni'             => 'DNI / NIE',
     'label_role'            => 'Sistemako rola',
-    'label_category'        => 'Polizia-kategoria (ID)',
-    'label_status'          => 'Egoera profesionala (ID)',
+    'label_category'        => 'Polizia-kategoria',
+    'label_status'          => 'Egoera profesionala',
     'btn_register_user'     => 'Agentea erregistratu',
     'category_agent'        => 'Agentea',
     'category_official'     => 'Ofiziala',
@@ -43,6 +43,12 @@ return [
     'state_duty_suspended'  => 'Eginkizunetatik etenda',
     'state_sanctioned'      => 'Zehatua',
     'state_retired'         => 'Erretiratua',
+    'success_register'      => 'Erabiltzailea ongi erregistratu da.',
+    'unsuccess_register'    => 'Errorea erabiltzailea erregistratzean. Mesedez, saiatu berriro.',
+
+    // Errors Messages 
+    'error_duplicate_badge' => 'Sartutako plaka-zenbakia jada erregistratuta dago sisteman.',
+    'error_duplicate_dni'   => 'Sartutako NAN/AIZ jada erregistratuta dago sisteman.',
 
     // Landing - Bienvenida
     'landing_welcome'    => 'Ongi etorri Polizia Erregistro Atari Bakarrera',

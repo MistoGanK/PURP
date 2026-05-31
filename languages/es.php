@@ -24,8 +24,8 @@ return [
     'label_apellidos'       => 'Apellidos',
     'label_dni'             => 'DNI / NIE',
     'label_role'            => 'Rol del sistema',
-    'label_category'        => 'Categoría policial (ID)',
-    'label_status'          => 'Estado profesional (ID)',
+    'label_category'        => 'Categoría policial',
+    'label_status'          => 'Estado profesional',
     'btn_register_user'     => 'Registrar Agente',
     'category_agent'        => 'Agente',
     'category_official'     => 'Oficial',
@@ -43,7 +43,13 @@ return [
     'state_duty_suspended'  => 'Suspendido de funciones',
     'state_sanctioned'      => 'Sancionado',
     'state_retired'         => 'Jubilado',
+    'success_register'      => 'Usuario registrado con éxito.',
+    'unsuccess_register'    => 'Error al registrar el usuario. Por favor, inténtelo de nuevo.',
 
+    // Erros Messages
+    'error_duplicate_badge' => 'El número de placa introducido ya está registrado en el sistema.',
+    'error_duplicate_dni'   => 'El DNI/NIE introducido ya está registrado en el sistema.',
+    
     // Landing - Bienvenida
     'landing_welcome'    => 'Bienvenido al Portal Único de Registro Policial',
     'landing_subtitle'   => 'Centraliza y gestiona las denuncias de manera eficiente y segura.',

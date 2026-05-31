@@ -24,8 +24,8 @@ return [
     'label_apellidos'       => 'Apelidos',
     'label_dni'             => 'DNI / NIE',
     'label_role'            => 'Rol do sistema',
-    'label_category'        => 'Categoría policial (ID)',
-    'label_status'          => 'Estado profesional (ID)',
+    'label_category'        => 'Categoría policial',
+    'label_status'          => 'Estado profesional',
     'btn_register_user'     => 'Rexistrar Axente',
     'category_agent'        => 'Axente',
     'category_official'     => 'Oficial',
@@ -44,6 +44,12 @@ return [
     'state_duty_suspended'  => 'Suspendido de funcións',
     'state_sanctioned'      => 'Sancionado',
     'state_retired'         => 'Xubilado',
+    'success_register'      => 'Usuario rexistrado con éxito.',
+    'unsuccess_register'    => 'Erro ao rexistrar o usuario. Por favor, ténteo de novo.',
+
+    // Errors Messages
+    'error_duplicate_badge' => 'O número de placa introducido xa está rexistrado no sistema.',
+    'error_duplicate_dni'   => 'O DNI/NIE introducido xa está rexistrado no sistema.',
 
     // Landing - Bienvenida
     'landing_welcome'    => 'Benvido ao Portal Único de Rexistro Policial',

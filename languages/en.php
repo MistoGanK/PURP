@@ -24,8 +24,8 @@ return [
     'label_apellidos'       => 'Last name',
     'label_dni'             => 'DNI / NIE',
     'label_role'            => 'System role',
-    'label_category'        => 'Police category (ID)',
-    'label_status'          => 'Professional status (ID)',
+    'label_category'        => 'Police category',
+    'label_status'          => 'Professional status',
     'btn_register_user'     => 'Register Agent',
     'category_agent'        => 'Officer / Agent',
     'category_official'     => 'Official',
@@ -44,6 +44,12 @@ return [
     'state_duty_suspended'  => 'Suspended from duty',
     'state_sanctioned'      => 'Sanctioned',
     'state_retired'         => 'Retired',
+    'success_register'      => 'User registered successfully.',
+    'unsuccess_register'    => 'Error registering the user. Please try again.',
+
+    // Erros Messages
+    'error_duplicate_badge' => 'The entered badge number is already registered in the system.',
+    'error_duplicate_dni'   => 'The entered DNI/NIE is already registered in the system.',
 
     // Landing - Bienvenida
     'landing_welcome'    => 'Welcome to the Unique Police Registry Portal',

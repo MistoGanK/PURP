@@ -24,32 +24,36 @@ class AuthController
         $user = $userModel->findByPlaca($placa);
 
         if (!$user || !password_verify($password, $user['password_hash'])) {
-            $_SESSION['login_error'] = 'auth_fail';
+            $_SESSION['flash'] = [
+                'type'    => 'danger',
+                'message' => __('auth_fail') ?? 'Número de placa o contraseña incorrectos.'
+            ];
 
-            header('Location: /index.php?action=home');
+            header('Location: index.php?action=login');
             exit;
         }
 
         $role = tipoUsuario::tryFrom($user['tipo_usuario']);
         $_SESSION['user'] = [
-            'id'            => $user['id_usuario'],
-            'agent_plate'   => $user['numero_placa'],
-            'nombre'        => $user['nombre'],
-            'rol'           => $role ? $role->name : 'CONSULTA'
+            'agent_id'              => $user['id_usuario'],
+            'agent_plate'           => $user['numero_placa'],
+            'agent_dni'             => $user['dni'],
+            'agent_name'            => $user['nombre'],
+            'agent_user_role'       => $user['tipo_usuario'],
+            'agent_category_role'   => $role ? $role->name : 10
         ];
 
-        header('Location: /index.php?action=home');
+        header('Location: index.php?action=home');
         exit;
     }
-    /** 
-     * Destroy session & disconect user
+    /** Destroy session & disconect user
      * Redirect to home
      * @return never
      */
     public static function logout()
     {
         session_destroy();
-        header('Location: /index.php?action=home');
+        header('Location: index.php?action=home');
         exit;
     }
 }

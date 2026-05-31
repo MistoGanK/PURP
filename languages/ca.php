@@ -24,8 +24,8 @@ return [
     'label_apellidos'       => 'Cognoms',
     'label_dni'             => 'DNI / NIE',
     'label_role'            => 'Rol del sistema',
-    'label_category'        => 'Categoria policial (ID)',
-    'label_status'          => 'Estat professional (ID)',
+    'label_category'        => 'Categoria policial',
+    'label_status'          => 'Estat professional',
     'btn_register_user'     => 'Registrar Agent',
     'category_agent'        => 'Agent',
     'category_official'     => 'Oficial',
@@ -44,7 +44,13 @@ return [
     'state_duty_suspended'  => 'Suspès de funcions',
     'state_sanctioned'      => 'Sancionat',
     'state_retired'         => 'Jubilat',
+    'success_register'      => 'Usuari registrat amb èxit.',
+    'unsuccess_register'    => "Error en registrar l'usuari. Si us plau, intenteu-ho de nou.",
 
+    // Errors Messages 
+    'error_duplicate_badge' => 'El número de placa introduït ja està registrat en el sistema.',
+    'error_duplicate_dni'   => 'El DNI/NIE introduït ja està registrat en el sistema.',
+    
     // Landing - Bienvenida
     'landing_welcome'    => 'Benvingut al Portal Únic de Registre Policial',
     'landing_subtitle'   => 'Centralitza i gestiona les denúncies de manera eficient i segura.',

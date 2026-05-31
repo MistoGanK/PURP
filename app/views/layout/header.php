@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>PURP</title>
-  <link rel="stylesheet" href="/assets/tailwind/mainOutput.css">
+  <link class="nav-link" rel="stylesheet" href="/assets/tailwind/mainOutput.css">
 </head>
 
 <body>
@@ -46,19 +46,26 @@
           </select>
         </div>
 
-        <div class="user-profile">
-          <span>👤</span>
-          <span><?php
-                echo $_SESSION['user']['nombre'] ?? __('guest');
-                ?> </span>
-          <span>▼</span>
-        </div>
+        <?php if (isset($_SESSION['user'])): ?>
+          <div class="user-profile">
+            <span>👤</span>
+            <span><?php echo $_SESSION['user']['agent_name'] ?? __('guest'); ?></span>
+            <span>▼</span>
+          </div>
 
-        <span class="text-white/30">|</span>
+          <span class="nav-separator">|</span>
 
-        <a href="index.php?action=logout" class="logout-link">
-          <?php echo __('nav_logout'); ?>
-        </a>
+          <a href="index.php?action=logout" class="logout-link">
+            <?php echo __('nav_logout'); ?>
+          </a>
+        <?php else: ?>
+          <span class="nav-separator">|</span>
+
+          <a href="index.php?action=login" class="login-link">
+            <?php echo __('btn_login') ?? 'Iniciar sesión'; ?>
+          </a>
+        <?php endif; ?>
+
       </div>
 
     </div>

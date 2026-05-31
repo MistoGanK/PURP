@@ -22,18 +22,38 @@ class UserController
 
     $userModel = new User();
 
-    $userModel->insertUser([
-      'dni'                => $_POST['dni'] ?? null,
-      'numero_placa'       => $_POST['numero_placa'] ?? '',
-      'nombre'             => $_POST['nombre'] ?? '',
-      'apellidos'          => $_POST['apellidos'] ?? '',
-      'password_hash'      => $hashedPassword,
-      'id_categoria'       => $_POST['id_categoria'] ?? 10,       // Initial default value
-      'estado_profesional' => $_POST['estado_profesional'] ?? 10, // Default value active
-      'tipo_usuario'       => $_POST['tipo_usuario'] ?? 50        // By default CONSULTA for security
-    ]);
+    try {
+      $result = $userModel->insertUser([
+        'dni'                   => $_POST['dni'] ?? null,
+        'numero_placa'          => $_POST['numero_placa'] ?? '',
+        'nombre'                => $_POST['nombre'] ?? '',
+        'apellidos'             => $_POST['apellidos'] ?? '',
+        'password_hash'         => $hashedPassword,
+        'categoria_profesional' => $_POST['categoria_profesional'] ?? 10,
+        'estado_profesional'    => $_POST['estado_profesional'] ?? 10,
+        'tipo_usuario'          => $_POST['tipo_usuario'] ?? 50
+      ]);
 
-    header('Location: /index.php?action=admin_users');
+      if ($result) {
+        $_SESSION['flash'] = [
+          'type'    => 'success',
+          'message' => __('success_register')
+        ];
+      
+      } else {
+        $_SESSION['flash'] = [
+          'type'    => 'error',
+          'message' => __('unsuccess_register')
+        ];
+      }
+    } catch (Exception $error) { 
+      $_SESSION['flash'] = [
+        'type'    => 'error',
+        'message' => __('unsuccess_register') ?? 'No se pudo procesar el registro. Verifique los datos.'
+      ];
+    }
+
+    header('Location: /index.php?action=register');
     exit;
   }
 }

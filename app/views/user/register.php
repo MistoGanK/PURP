@@ -1,12 +1,44 @@
-<?php require_once __DIR__ . '/../layout/header_public.php'; ?>
+<?php
+require_once __DIR__ . '/../layout/header_public.php';
+
+// ENFOQUE SEGURIDAD: Eliminadas las bolsas de $_SESSION['errors'] y $_SESSION['old_input']
+// para evitar el rastreo de datos en el cliente tras un fallo.
+
+if (isset($_SESSION['flash'])) {
+    $flash = $_SESSION['flash'];
+    $bgRegisterState = $flash['type'] === 'success' ?  'alert-success' : 'alert-danger';
+};
+?>
 
 <script>
     window.APP_CONFIG = {
         categoriaProfesional: <?php echo json_encode(categoriaProfesional::jsonOptions()); ?>,
         estadoProfesional: <?php echo json_encode(estadoProfesional::jsonOptions()); ?>,
-        tipoUsuario: <?php echo json_encode(tipoUsuario::jsonOptions()); ?>
-    };
+        tipoUsuario: <?php echo json_encode(tipoUsuario::jsonOptions()); ?>,
+        flash: <?php echo isset($flash) ? json_encode($flash) : 'null'; ?>
+    }; 
 </script>
+
+<?php if (isset($_SESSION['flash'])): ?>
+    <?php
+    $mensajes = is_array($flash['message']) ? $flash['message'] : [$flash['message']];
+    ?>
+    <div class="alert-container">
+        <?php foreach ($mensajes as $msg): ?>
+            <div class="alert <?php echo $bgRegisterState; ?>" role="alert">
+                <div class="flex-1">
+                    <?php echo $msg; ?>
+                </div>
+                <button onclick="this.parentElement.remove()" class="text-(--cool-steel) hover:text-(--characol) transition-colors cursor-pointer">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <?php unset($_SESSION['flash']); ?>
+<?php endif; ?>
 
 <main class="form-container">
     <div class="form-card">
@@ -57,7 +89,7 @@
 
             <div class="form-field">
                 <label><?php echo __('label_category') ?? 'Categoria policial'; ?></label>
-                <select name="id_categoria" required>
+                <select name="categoria_profesional" required>
                     <?php foreach (categoriaProfesional::jsonOptions() as $opcion): ?>
                         <option value="<?php echo $opcion['value']; ?>" <?php echo $opcion['value'] === 10 ? 'selected' : ''; ?>>
                             <?php echo $opcion['label']; ?>
@@ -77,9 +109,15 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn-primary w-full">
-                <?php echo __('btn_register_user') ?? 'Registrar Agent'; ?>
-            </button>
+            <div class="flex items-center gap-4 pt-2">
+                <a href="/index.php?action=home" class="btn-secondary flex-1">
+                    <?php echo __('btn_back_home') ?? 'Volver a inicio'; ?>
+                </a>
+
+                <button type="submit" class="btn-primary flex-1">
+                    <?php echo __('btn_register_user') ?? 'Registrar Agent'; ?>
+                </button>
+            </div>
         </form>
     </div>
 </main>

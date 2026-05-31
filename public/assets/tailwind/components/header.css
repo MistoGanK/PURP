@@ -34,10 +34,20 @@
   .lang-select {
     @apply bg-transparent text-(--white) cursor-pointer focus:outline-none;
   }
+
   .user-profile {
     @apply flex items-center gap-2 cursor-pointer hover:text-(--platinium);
   }
+
   .logout-link {
     @apply hover:text-(--tomatoe-jam) font-["Inter-Semibold"] transition;
+  }
+
+  .login-link {
+    @apply hover:text-(--platinium) font-["Inter-Semibold"] transition;
+  }
+
+  .nav-separator {
+    @apply text-(--white)/30 select-none;
   }
 }
