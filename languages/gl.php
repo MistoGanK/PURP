@@ -47,6 +47,14 @@ return [
     'success_register'      => 'Usuario rexistrado con éxito.',
     'unsuccess_register'    => 'Erro ao rexistrar o usuario. Por favor, ténteo de novo.',
 
+    // MFA 
+    'mfa_setup_title'    => 'Configurar Dobre Factor (MFA)',
+    'mfa_setup_subtitle' => 'Escanee o código QR coa súa aplicación de autenticación (Aegis, Google Authenticator) para vincular a súa credencial policial.',
+    'mfa_qr_alt'         => 'Código QR de Seguridade',
+    'mfa_manual_text'    => 'Non pode escanealo? Introduza esta clave manualmente na súa aplicación:',
+    'mfa_code_label'     => 'Código de Confirmación de 6 díxitos',
+    'btn_mfa_activate'   => 'Activar e Confirmar Seguridade',
+
     // Errors Messages
     'error_duplicate_badge' => 'O número de placa introducido xa está rexistrado no sistema.',
     'error_duplicate_dni'   => 'O DNI/NIE introducido xa está rexistrado no sistema.',

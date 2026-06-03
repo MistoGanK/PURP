@@ -47,6 +47,14 @@ return [
     'success_register'      => 'User registered successfully.',
     'unsuccess_register'    => 'Error registering the user. Please try again.',
 
+    // MFA
+    'mfa_setup_title'       => 'Configure Multi-Factor Authentication (MFA)',
+    'mfa_setup_subtitle'    => 'Scan the QR code with your authenticator app (Aegis, Google Authenticator) to link your police credential.',
+    'mfa_qr_alt'            => 'Security QR Code',
+    'mfa_manual_text'       => 'Can\'t scan it? Enter this key manually into your app:',
+    'mfa_code_label'        => '6-digit Confirmation Code',
+    'btn_mfa_activate'      => 'Activate and Confirm Security',
+
     // Erros Messages
     'error_duplicate_badge' => 'The entered badge number is already registered in the system.',
     'error_duplicate_dni'   => 'The entered DNI/NIE is already registered in the system.',

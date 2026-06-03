@@ -46,7 +46,7 @@ if (isset($_SESSION['flash'])) {
             <?php unset($_SESSION['login_error']); ?>
         <?php endif; ?>
 
-        <form action="index.php?action=do_login" method="POST" class="form-layout">
+        <form action="index.php?action=login" method="POST" class="form-layout">
             <div class="form-field">
                 <label><?php echo __('badge_number'); ?></label>
                 <input type="text" name="numero_placa" required placeholder="<?php echo __('badge_placeholder'); ?>">

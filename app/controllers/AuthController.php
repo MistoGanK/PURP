@@ -1,4 +1,5 @@
 <?php
+
 class AuthController
 {
     /**
@@ -26,13 +27,20 @@ class AuthController
         if (!$user || !password_verify($password, $user['password_hash'])) {
             $_SESSION['flash'] = [
                 'type'    => 'danger',
-                'message' => __('auth_fail') ?? 'Número de placa o contraseña incorrectos.'
+                'message' => __('auth_fail')
             ];
 
             header('Location: index.php?action=login');
             exit;
         }
 
+        if (!empty($user['mfa_secret'])) {
+            $_SESSION['mfa_pending_user'] = $user;
+            header('Location: index.php?action=verify_mfa');
+            exit;
+        }
+
+        // If not MFA set up, normal login
         $role = tipoUsuario::tryFrom($user['tipo_usuario']);
         $_SESSION['user'] = [
             'agent_id'              => $user['id_usuario'],
@@ -46,7 +54,8 @@ class AuthController
         header('Location: index.php?action=home');
         exit;
     }
-    /** Destroy session & disconect user
+
+    /** Destroy session & disconnect user
      * Redirect to home
      * @return never
      */

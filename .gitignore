@@ -21,3 +21,4 @@ mysql/
 ### --- Archivos del Sistema Operativo ---
 .DS_Store
 Thumbs.db
+vendor/

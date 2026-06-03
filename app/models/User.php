@@ -51,13 +51,38 @@ class User extends BaseModel
                 'estado_profesional'        => $data['estado_profesional'],
                 'tipo_usuario'              => $data['tipo_usuario']
             ]);
-            
         } catch (PDOException $error) {
             // capture the integrity constraint violation code (23000)
             if ($error->getCode() == '23000') {
                 throw new Exception("Registration failed due to unique constraint violation: " . $error->getMessage());
             }
             throw $error;
+        }
+    }
+
+    /**
+     * Updates user record with definitive 2FA configuration data.
+     * * @param array $data Contains keys: 'secretKey', 'jsonBackup', and 'userId'.
+     * @return bool       True on successful statement execution.
+     * @throws Exception  If a database integrity or connection error occurs.
+     */
+    public function insert2fa(array $data)
+    {
+        $db = self::connect();
+        try {
+            $sql = "UPDATE usuarios 
+                    SET mfa_secret = :mfa_secret, mfa_backup_codes = :mfa_backup_codes 
+                    WHERE id_usuario = :id_usuario";
+
+            $stmt = $db->prepare($sql);
+
+            return $stmt->execute([
+                'mfa_secret'            => $data['secretKey'],
+                'mfa_backup_codes'      => $data['jsonBackup'],
+                'id_usuario'            => $data['userId']
+            ]);
+        } catch (PDOException $error) {
+            throw new Exception("Failed to update MFA settings: " . $error->getMessage());
         }
     }
 }

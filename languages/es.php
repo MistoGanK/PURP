@@ -46,10 +46,18 @@ return [
     'success_register'      => 'Usuario registrado con éxito.',
     'unsuccess_register'    => 'Error al registrar el usuario. Por favor, inténtelo de nuevo.',
 
+    // MFA
+    'mfa_setup_title'       => 'Configurar Doble Factor (MFA)',
+    'mfa_setup_subtitle'    => 'Escanee el código QR con su aplicación de autenticación (Aegis, Google Authenticator) para vincular su credencial policial.',
+    'mfa_qr_alt'            => 'Código QR de Seguridad',
+    'mfa_manual_text'       => '¿No puede escanearlo? Introduzca esta clave manualmente en su app:',
+    'mfa_code_label'        => 'Código de Confirmación de 6 dígitos',
+    'btn_mfa_activate'      => 'Activar y Confirmar Seguridad',
+
     // Erros Messages
     'error_duplicate_badge' => 'El número de placa introducido ya está registrado en el sistema.',
     'error_duplicate_dni'   => 'El DNI/NIE introducido ya está registrado en el sistema.',
-    
+
     // Landing - Bienvenida
     'landing_welcome'    => 'Bienvenido al Portal Único de Registro Policial',
     'landing_subtitle'   => 'Centraliza y gestiona las denuncias de manera eficiente y segura.',

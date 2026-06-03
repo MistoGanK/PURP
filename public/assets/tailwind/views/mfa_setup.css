@@ -1,0 +1,92 @@
+@layer components {
+  .alert-container-mfa {
+    @apply mb-4 w-full flex flex-col gap-2;
+  }
+
+  .alert-text-wrapper {
+    @apply flex-1;
+  }
+
+  .alert-close-btn {
+    @apply text-(--cool-steel) hover:text-(--characol) transition-colors cursor-pointer flex items-center justify-center;
+  }
+
+  .alert-close-icon {
+    @apply w-5 h-5;
+  }
+
+  .qr-wrapper-mfa {
+    @apply block my-6 p-4 bg-(--white)  w-full;
+  }
+
+  .qr-wrapper-mfa img {
+    @apply block mx-auto;
+  }
+
+  .mfa-info-box {
+    @apply text-center bg-(--snow) p-4 rounded-md border border-(--platinium) mb-4;
+  }
+
+  .mfa-info-text {
+    @apply text-sm text-(--state-grey) font-["Inter-Medium"];
+  }
+
+  .mfa-secret-code {
+    @apply block font-["Montserrat-Bold"] text-lg tracking-wider text-(--blue-brand) mt-2 select-all;
+  }
+
+  .form-field .mfa-code-input {
+    @apply w-full h-20 p-3 bg-(--white) border border-(--platinium) rounded-md 
+           text-center tracking-widest text-3xl font-["Inter-Bold"] text-(--characol) 
+           transition-colors duration-150;
+  }
+
+  /* El estado de enfoque (Focus) limpio y unificado */
+  .form-field .mfa-code-input:focus {
+    @apply outline-none border-(--blue-brand) ring-1 ring-(--blue-brand);
+  }
+
+
+  .btn-submit-mfa {
+    @apply w-full;
+  }
+
+  .form-actions {
+    @apply flex items-center justify-between gap-4 mt-6 w-full;
+  }
+
+  .form-actions a,
+  .form-actions button {
+    @apply flex-1 text-center justify-center;
+  }
+
+  /* Success */
+  .mfa-success-icon-wrapper {
+    @apply flex justify-center mb-4 text-(--sea-green);
+  }
+
+  .mfa-success-icon {
+    @apply w-16 h-16;
+  }
+
+  .mfa-warning-box {
+    @apply text-left bg-(--snow) p-4 rounded-md border-l-4 border-l-(--goldenrod) border border-(--platinium) mb-6;
+  }
+
+  .mfa-warning-title {
+    @apply text-sm font-["Inter-Bold"] text-(--goldenrod) mb-1;
+  }
+
+  .mfa-grid-codes {
+    @apply grid grid-cols-2 gap-3 mb-6;
+  }
+
+  .mfa-code-item {
+    @apply bg-(--snow) border border-(--platinium) p-2.5 rounded text-center 
+           font-mono text-base tracking-widest text-(--characol) select-all;
+  }
+
+  .btn-full {
+    @apply w-full;
+  }
+}

@@ -47,6 +47,14 @@ return [
     'success_register'      => 'Usuari registrat damb èxit.',
     'unsuccess_register'    => 'Error en registrar er usuari. Per favor, intentatz-ho de nau.',
 
+    // MFA
+    'mfa_setup_title'    => 'Configurer l\'Authentification à Double Facteur (MFA)',
+    'mfa_setup_subtitle' => 'Scannez le code QR avec votre application d\'authentification (Aegis, Google Authenticator) pour lier votre identifiant de police.',
+    'mfa_qr_alt'         => 'Code QR de Sécurité',
+    'mfa_manual_text'    => 'Vous ne pouvez pas le scanner ? Saisissez cette clé manuellement dans votre application :',
+    'mfa_code_label'     => 'Code de Confirmation à 6 chiffres',
+    'btn_mfa_activate'   => 'Activer et Confirmer la Sécurité',
+
     // Errors Messages
     'error_duplicate_badge' => 'Eth numèro de placa introduït dejà ei registrat en sistèma.',
     'error_duplicate_dni'   => 'Eth DNI/NIE introduït dejà ei registrat en sistèma.',

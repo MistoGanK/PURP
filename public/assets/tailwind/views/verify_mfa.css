@@ -1,0 +1,38 @@
+@layer components {
+  /* Contenedor de las alertas con el espaciado correcto hacia abajo */
+  .alert-container-mfa {
+    @apply mb-4 w-full flex flex-col gap-2;
+  }
+
+  /* Contenedor interno del texto de la alerta */
+  .alert-text-wrapper {
+    @apply flex-1;
+  }
+
+  /* Botón de cierre de la alerta */
+  .alert-close-btn {
+    @apply text-(--cool-steel) hover:text-(--characol) transition-colors cursor-pointer flex items-center justify-center;
+  }
+
+  /* Dimensiones del icono de la cruz (X) */
+  .alert-close-icon {
+    @apply w-5 h-5;
+  }
+
+  /* COMPONENTE: Input específico para códigos de verificación (MFA) */
+  .form-input-mfa {
+    @apply w-full p-3 bg-white border border-(--platinium) rounded-md text-center tracking-widest text-2xl font-["Inter-Bold"] text-(--characol) focus:outline-none focus:border-(--blue-brand) transition-colors;
+  }
+
+  .form-field{
+    
+  }
+
+  .mfa-code-input{
+    @apply text-2xl;
+  }
+  /* Extensión del botón primario para forzar el ancho completo */
+  .btn-submit-mfa {
+    @apply w-full;
+  }
+}

@@ -47,6 +47,14 @@ return [
     'success_register'      => 'Utilisateur enregistré avec succès.',
     'unsuccess_register'    => "Erreur lors de l'enregistrement de l'utilisateur. Veuillez réessayer.",
 
+    // MFA 
+    'mfa_setup_title'       => 'Configurer l\'Authentification à Double Facteur (MFA)',
+    'mfa_setup_subtitle'    => 'Scannez le code QR avec votre application d\'authentification (Aegis, Google Authenticator) pour lier votre identifiant de police.',
+    'mfa_qr_alt'            => 'Code QR de Sécurité',
+    'mfa_manual_text'       => 'Vous ne pouvez pas le scanner ? Saisissez cette clé manuellement dans votre application :',
+    'mfa_code_label'        => 'Code de Confirmation à 6 chiffres',
+    'btn_mfa_activate'      => 'Activer et Confirmer la Sécurité',
+
     // Errors Messages
     'error_duplicate_badge' => 'Le numéro de matricule saisi est déjà enregistré dans le système.',
     'error_duplicate_dni'   => 'Le DNI/NIE saisi est déjà enregistré dans le système.',

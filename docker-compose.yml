@@ -37,7 +37,16 @@ services:
     depends_on:
       - app
 
-  # Tailwind Script
+  # Composer 
+  composer:
+    image: composer:latest
+    container_name: purp_composer
+    volumes:
+        - .:/app
+    working_dir: /app
+    user: "1000:1000"
+
+  # Tailwind
   tailwind:
     image: node:20-alpine
     container_name: purp_tailwind
@@ -47,7 +56,6 @@ services:
     volumes:
      - .:/src:z
      - /src/node_modules
-    # Comando
     command: >
      sh -c "npm install && ./node_modules/.bin/tailwindcss -i ./public/assets/tailwind/main.css -o ./public/assets/tailwind/mainOutput.css --watch --poll"     
 

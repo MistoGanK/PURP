@@ -46,6 +46,14 @@ return [
     'success_register'      => 'Erabiltzailea ongi erregistratu da.',
     'unsuccess_register'    => 'Errorea erabiltzailea erregistratzean. Mesedez, saiatu berriro.',
 
+    // MFA
+    'mfa_setup_title'    => 'Faktore Bikoitzeko Autentifikazioa Konfiguratu (MFA)',
+    'mfa_setup_subtitle' => 'Eskaneatu QR kodea zure autentifikazio aplikazioarekin (Aegis, Google Authenticator) zure poliziazko egiaztagiria lotzeko.',
+    'mfa_qr_alt'         => 'Segurtasuneko QR Kodea',
+    'mfa_manual_text'    => 'Ezin duzu eskaneatu? Sartu gako hau eskuz zure aplikazioan:',
+    'mfa_code_label'     => '6 digituko Baieztapen Kodea',
+    'btn_mfa_activate'   => 'Segurtasuna Aktibatu eta Baieztatu',
+
     // Errors Messages 
     'error_duplicate_badge' => 'Sartutako plaka-zenbakia jada erregistratuta dago sisteman.',
     'error_duplicate_dni'   => 'Sartutako NAN/AIZ jada erregistratuta dago sisteman.',

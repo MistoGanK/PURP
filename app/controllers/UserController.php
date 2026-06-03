@@ -1,4 +1,5 @@
 <?php
+
 class UserController
 {
   /**
@@ -39,14 +40,13 @@ class UserController
           'type'    => 'success',
           'message' => __('success_register')
         ];
-      
       } else {
         $_SESSION['flash'] = [
           'type'    => 'error',
           'message' => __('unsuccess_register')
         ];
       }
-    } catch (Exception $error) { 
+    } catch (Exception $error) {
       $_SESSION['flash'] = [
         'type'    => 'error',
         'message' => __('unsuccess_register') ?? 'No se pudo procesar el registro. Verifique los datos.'

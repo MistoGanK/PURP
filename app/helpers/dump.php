@@ -16,7 +16,7 @@ if (!function_exists('dump')) {
 
     echo '<div style="background-color: #010400; color: #e6e8ee; padding: 1.125rem; border-radius: 0.375rem; font-family: \'Inter-Medium\', sans-serif; font-size: 0.8125rem; line-height: 1.6; border-left: 0.375rem solid #2c468a; border-top: 1px solid #9aa1af; border-right: 1px solid #9aa1af; border-bottom: 1px solid #9aa1af; margin: 1.25rem 0; overflow-x: auto; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.7);">';
 
-    echo '<strong style="color: #b02a37; display: block; margin-bottom: 0.625rem; font-family: \'Montserrat-Bold\', sans-serif; text-transform: uppercase; letter-spacing: 0.05rem; font-size: 0.75rem;">🔍 POLICE SYSTEM — IN-MEMORY DATA INSPECTION:</strong>';
+    echo '<strong style="color: #b02a37; display: block; margin-bottom: 0.625rem; font-family: \'Montserrat-Bold\', sans-serif; text-transform: uppercase; letter-spacing: 0.05rem; font-size: 0.75rem;">POLICE SYSTEM — IN-MEMORY DATA INSPECTION:</strong>';
 
     echo '<pre style="margin: 0; white-space: pre-wrap; color: #fdfdfd; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 0.8125rem;">';
 
