@@ -45,6 +45,17 @@ return [
     'state_retired'         => 'Xubiláu',
     'success_register'      => 'Usuariu rexistráu con ésitu.',
     'unsuccess_register'    => 'Error al rexistrar l\'usuariu. Por favor, inténtelo de nuevo.',
+    'state'                 => 'Estáu',
+    'state_active'          => 'Activu',
+    'state_inactive'        => 'Inactivu',
+
+    // User - Profile
+    'title_user_profile'    => 'Perfil del Axente',
+    'subtitle_user_profile' => 'Consulte los sos datos de credencial y anueve la so información de rexistru nel sistema.',
+    'profile_avatar_help'   => 'Calque nel iconu pa camudar la fotografía oficial',
+    'btn_save_changes'      => 'Guardar cambeos',
+    'success_update'        => 'Perfil anováu correutamente.',
+    'unsuccess_update'      => 'Error al anovar el perfil. Por favor, inténtalo de nuevo.',
 
     // MFA
     'mfa_setup_title'       => 'Configurar Doble Factor (MFA)',
@@ -53,10 +64,13 @@ return [
     'mfa_manual_text'       => '¿Nun pue escanealu? Introduza esta clave a mano na so aplicación:',
     'mfa_code_label'        => 'Códigu de Confirmación de 6 díxitos',
     'btn_mfa_activate'      => 'Activar y Confirmar Seguranza',
+    'mfa_already_active'    => 'L\'autenticación de doble factor (MFA) yá ta activada.',
 
     // Erros Messages
     'error_duplicate_badge' => 'El númberu de placa introducíu yá ta rexistráu nel sistema.',
     'error_duplicate_dni'   => 'El DNI/NIE introducíu yá ta rexistráu nel sistema.',
+    'error_missing_id'      => 'Error: Nun se pudo identificar al usuariu.',
+    'error_system'          => 'Hebo un error inesperáu nel sistema.',
 
     // Landing - Bienvenida
     'landing_welcome'    => 'Bienveníu al Portal Únicu de Rexistru Policial',

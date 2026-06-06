@@ -11,34 +11,6 @@ require_once __DIR__ . '/../app/helpers/router.php';
 require_once __DIR__ . '/../app/helpers/auth.php';
 require_once __DIR__ . '/../vendor/autoload.php';
 
-// Not loggin permissions
-if (!isset($_SESSION['user'])) {
-    $public_actions = ['login', 'set_lang', 'verify_mfa'];
-    $current_action = $_GET['action'] ?? 'home';
-
-    if (!in_array($current_action, $public_actions)) {
-        header('Location: index.php?action=login');
-        exit;
-    }
-}
-// Logged permissions
-if (isset($_SESSION['user'])) {
-    $logged_blocked_actions = ['login'];
-    $current_action = $_GET['action'] ?? 'home';
-
-    if (in_array($current_action, $logged_blocked_actions)) {
-        header('Location: index.php?action=home');
-        exit;
-    }
-}
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-$action = $_GET['action'] ?? 'home';
-$method = $_SERVER['REQUEST_METHOD'];
-
 // Resources Loader
 spl_autoload_register(function ($className) {
     $resources = [
@@ -63,6 +35,48 @@ spl_autoload_register(function ($className) {
     }
 });
 
+// Not loggin permissions
+if (!isset($_SESSION['user'])) {
+    $public_actions = ['login', 'set_lang', 'verify_mfa'];
+    $current_action = $_GET['action'] ?? 'home';
+
+    if (!in_array($current_action, $public_actions)) {
+        header('Location: index.php?action=login');
+        exit;
+    }
+}
+
+// Logged permissions
+if (isset($_SESSION['user'])) {
+    $logged_blocked_actions = ['login'];
+    $current_action = $_GET['action'] ?? 'home';
+
+    if (in_array($current_action, $logged_blocked_actions)) {
+        header('Location: index.php?action=home');
+        exit;
+    }
+
+    // MFA check
+    if ($current_action === 'setup_mfa') {
+        $userModel = new User();
+        if ($userModel->checkActiveMfa((int) $_SESSION['user']['agent_id'])) {
+            $_SESSION['flash'] = [
+                'type' => 'info',
+                'message' => __('mfa_already_active')
+            ];
+            header('Location: index.php?action=home');
+            exit;
+        }
+    }
+}
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+$action = $_GET['action'] ?? 'home';
+$method = $_SERVER['REQUEST_METHOD'];
+
 $router = new Router();
 
 // Public (GET)
@@ -74,6 +88,7 @@ $router->get('logout',            [AuthController::class,       'logout']);
 $router->get('denuncias',         [DenunciaController::class,   'listar']);
 $router->get('denuncia_nueva',    [DenunciaController::class,   'crear']);
 $router->get('register',          [UserController::class,       'showRegister']);
+$router->get('show_profile',      [UserController::class,       'showProfile']);
 
 // GET MfaController
 $router->get('setup_mfa',         [MfaController::class,        'setUpMfa']);
@@ -83,10 +98,10 @@ $router->get('mfa_success',       [MfaController::class,        'showSuccess']);
 $router->post('login',            [AuthController::class,       'login']);
 $router->post('denuncia_guardar', [DenunciaController::class,   'guardar']);
 $router->post('createUser',       [UserController::class,       'createUser']);
-$router->post('verify_mfa',       [MfaController::class,        'verifyMfa']);
+$router->post('createUser',       [UserController::class,       'createUser']);
+$router->post('update_profile',   [UserController::class,       'updateProfile']);
 
 // POST MfaController
 $router->post('confirm_mfa',      [MfaController::class,        'confirmMfa']);
 
-// dump_die($router);
 $router->dispatch($action, $method);

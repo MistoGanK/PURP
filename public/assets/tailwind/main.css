@@ -31,3 +31,6 @@
 /* Vistas MFA */
 @import "./views/mfa_setup.css";
 @import "./views/verify_mfa.css";
+
+/* Vistas Usuarios */
+@import "./views/show_profile.css";

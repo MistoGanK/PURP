@@ -46,6 +46,17 @@ return [
     'state_retired'         => 'Retired',
     'success_register'      => 'User registered successfully.',
     'unsuccess_register'    => 'Error registering the user. Please try again.',
+    'state'                 => 'Status',
+    'state_active'          => 'Active',
+    'state_inactive'        => 'Inactive',
+
+    // User - Profile
+    'title_user_profile'    => 'Agent Profile',
+    'subtitle_user_profile' => 'View your credential data and update your registration information in the system.',
+    'profile_avatar_help'   => 'Click on the icon to change the official photograph',
+    'btn_save_changes'      => 'Save Changes',
+    'success_update'        => 'Profile updated successfully.',
+    'unsuccess_update'      => 'Error updating profile. Please try again.',
 
     // MFA
     'mfa_setup_title'       => 'Configure Multi-Factor Authentication (MFA)',
@@ -54,10 +65,15 @@ return [
     'mfa_manual_text'       => 'Can\'t scan it? Enter this key manually into your app:',
     'mfa_code_label'        => '6-digit Confirmation Code',
     'btn_mfa_activate'      => 'Activate and Confirm Security',
+    'mfa_already_active'    => 'Multi-factor authentication (MFA) is already enabled.',
 
     // Erros Messages
     'error_duplicate_badge' => 'The entered badge number is already registered in the system.',
     'error_duplicate_dni'   => 'The entered DNI/NIE is already registered in the system.',
+    'error_missing_id'      => 'Error: User ID could not be identified.',
+    'error_system'          => 'An unexpected system error occurred.',
+
+
 
     // Landing - Bienvenida
     'landing_welcome'    => 'Welcome to the Unique Police Registry Portal',

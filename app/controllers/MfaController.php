@@ -10,7 +10,7 @@ class MfaController
    */
   public static function setUpMfa()
   {
-    // Solo permitimos configurar si el agente ya inició sesión previamente
+    // Only an account can configure it
     if (!isset($_SESSION['user'])) {
       header('Location: index.php?action=login');
       exit;
@@ -38,8 +38,8 @@ class MfaController
       exit;
     }
 
-    $insertedCode = $_POST['first_mfa_code'] ?? '';
-    $secretKey = $_SESSION['mfa_setup_secret'];
+    $insertedCode = (string) ($_POST['first_mfa_code'] ?? '');
+    $secretKey = (string) $_SESSION['mfa_setup_secret'];
 
     $tfa = new TwoFactorAuth('PURP');
     $checkTfa = $tfa->verifyCode($secretKey, $insertedCode);
@@ -58,12 +58,12 @@ class MfaController
     $hashedBackupCodes = [];
 
     for ($i = 0; $i < 8; $i++) {
-      $code = (string)rand(10000000, 99999999);
+      $code = (string) rand(10000000, 99999999);
       $rawBackupCodes[] = $code;
       $hashedBackupCodes[] = password_hash($code, PASSWORD_BCRYPT);
     }
 
-    $userId = $_SESSION['user']['agent_id'];
+    $userId = (int) ($_SESSION['user']['agent_id'] ?? 0);
     $jsonBackup = json_encode($hashedBackupCodes);
 
     $userModel = new User();
@@ -91,11 +91,11 @@ class MfaController
       exit;
     }
 
-    $userCode = $_POST['code_verification'] ?? '';
+    $userCode = (string) ($_POST['code_verification'] ?? '');
     $user = $_SESSION['mfa_pending_user'];
 
     $tfa = new TwoFactorAuth('PURP');
-    $checkTfa = $tfa->verifyCode($user['mfa_secret'], $userCode);
+    $checkTfa = $tfa->verifyCode((string) $user['mfa_secret'], $userCode);
 
     if (!$checkTfa) {
       $_SESSION['flash'] = [
@@ -110,17 +110,18 @@ class MfaController
 
     $role = tipoUsuario::tryFrom($user['tipo_usuario']);
     $_SESSION['user'] = [
-      'agent_id'              => $user['id_usuario'],
-      'agent_plate'           => $user['numero_placa'],
-      'agent_dni'             => $user['dni'],
-      'agent_name'            => $user['nombre'],
-      'agent_user_role'       => $user['tipo_usuario'],
+      'agent_id'              => (int) $user['id_usuario'],
+      'agent_plate'           => (string) $user['numero_placa'],
+      'agent_dni'             => (string) $user['dni'],
+      'agent_name'            => (string) $user['nombre'],
+      'agent_user_role'       => (int) $user['tipo_usuario'],
       'agent_category_role'   => $role ? $role->name : 10
     ];
 
     header('Location: index.php?action=home');
     exit;
   }
+
   /**
    * Displays the MFA success screens and shows generated backup codes
    * @return void
@@ -138,6 +139,7 @@ class MfaController
 
     require __DIR__ . '/../views/mfa/mfa_success.php';
   }
+
   /**
    * Displays the MFA verify
    * @return void

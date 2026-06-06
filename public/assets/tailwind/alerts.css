@@ -30,4 +30,9 @@
   .alert-warning {
     @apply border-l-[6px] border-l-(--goldenrod) text-(--goldenrod);
   }
+  
+  /* Info Alert */
+  .alert-info {
+    @apply border-l-[6px] border-l-(--cerulean) text-(--cerulean);
+  }
 }

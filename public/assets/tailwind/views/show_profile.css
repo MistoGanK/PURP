@@ -1,0 +1,66 @@
+@layer components {
+  /* Ampliación de la tarjeta contenedora para asimilar las dos columnas */
+  .max-w-profile {
+    @apply max-w-2xl w-full mx-auto;
+  }
+
+  /* Sección fotografia */
+  .profile-avatar-section {
+    @apply flex flex-col items-center justify-center gap-2 pb-4 border-b border-(--platinium);
+  }
+
+  .profile-avatar-wrapper {
+    @apply relative w-28 h-28 rounded-full border-2 border-(--platinium) 
+           bg-(--white) shadow-sm flex items-center justify-center;
+  }
+
+  .profile-avatar-img {
+    @apply w-full h-full rounded-full object-cover overflow-hidden;
+  }
+
+  /* Botón flotante para la subida de ficheros */
+  .profile-avatar-upload-btn {
+    @apply absolute bottom-0 right-0 w-8 h-8 
+           bg-(--white) border border-(--platinium) rounded-full 
+           flex items-center justify-center shadow-md cursor-pointer
+           hover:bg-(--snow) hover:scale-105 active:scale-95
+           transition-all duration-150;
+  }
+
+  .profile-avatar-help {
+    @apply text-xs font-["Inter-Italic"] text-(--state-grey) text-center mt-1;
+  }
+
+  /* Cuadricula del formulario */
+  @apply grid grid-cols-1 md:grid-cols-2 gap-5 pt-2;
+}
+
+.profile-fields-grid .form-field {
+  @apply flex flex-col gap-2.5;
+}
+
+.profile-fields-grid .form-field label {
+  @apply text-xs font-["Inter-Bold"] text-(--characol) uppercase tracking-wider mt-2.5;
+}
+
+.profile-fields-grid .form-field input[type="text"],
+.profile-fields-grid .form-field select {
+  @apply w-full px-4 py-2.5
+           bg-(--white) border border-(--platinium) rounded-md
+           font-["Inter-Medium"] text-sm text-(--black)
+           transition-colors duration-150
+           placeholder:text-(--cool-steel);
+}
+
+.profile-fields-grid .form-field input:focus,
+.profile-fields-grid .form-field select:focus {
+  @apply outline-none border-(--blue-brand) ring-1 ring-(--blue-brand);
+}
+
+.profile-fields-grid .form-field select {
+  @apply cursor-pointer bg-(--white) appearance-none;
+}
+
+.profile-form-actions {
+  @apply flex flex-col sm:flex-row items-center gap-4 pt-4 border-t border-(--platinium) mt-2;
+}

@@ -46,6 +46,17 @@ return [
     'state_retired'         => 'Xubilado',
     'success_register'      => 'Usuario rexistrado con éxito.',
     'unsuccess_register'    => 'Erro ao rexistrar o usuario. Por favor, ténteo de novo.',
+    'state'                 => 'Estado',
+    'state_active'          => 'Activo',
+    'state_inactive'        => 'Inactivo',
+
+    // User - Profile
+    'title_user_profile'    => 'Perfil do Axente',
+    'subtitle_user_profile' => 'Consulte os seus datos de credencial e actualice a súa información de rexistro no sistema.',
+    'profile_avatar_help'   => 'Prema na icona para cambiar a fotografía oficial',
+    'btn_save_changes'      => 'Gardar cambios',
+    'success_update'        => 'Perfil actualizado correctamente.',
+    'unsuccess_update'      => 'Erro ao actualizar o perfil. Por favor, ténteo de novo.',
 
     // MFA 
     'mfa_setup_title'    => 'Configurar Dobre Factor (MFA)',
@@ -54,10 +65,14 @@ return [
     'mfa_manual_text'    => 'Non pode escanealo? Introduza esta clave manualmente na súa aplicación:',
     'mfa_code_label'     => 'Código de Confirmación de 6 díxitos',
     'btn_mfa_activate'   => 'Activar e Confirmar Seguridade',
+    'mfa_already_active' => 'A autenticación de dobre factor (MFA) xa está activada.',
 
     // Errors Messages
     'error_duplicate_badge' => 'O número de placa introducido xa está rexistrado no sistema.',
     'error_duplicate_dni'   => 'O DNI/NIE introducido xa está rexistrado no sistema.',
+    'error_missing_id'      => 'Erro: Non se puido identificar o usuario.',
+    'error_system'          => 'Ocorreu un erro inesperado no sistema.',
+
 
     // Landing - Bienvenida
     'landing_welcome'    => 'Benvido ao Portal Único de Rexistro Policial',

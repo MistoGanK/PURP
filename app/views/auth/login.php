@@ -39,7 +39,7 @@ if (isset($_SESSION['flash'])) {
             <div class="alert-danger" role="alert">
                 <span class="alert-danger-text">
                     <?php
-                    echo __($_SESSION['login_error']) ?? 'Número de placa o contraseña incorrectos.';
+                    echo __($_SESSION['login_error']);
                     ?>
                 </span>
             </div>
@@ -48,8 +48,8 @@ if (isset($_SESSION['flash'])) {
 
         <form action="index.php?action=login" method="POST" class="form-layout">
             <div class="form-field">
-                <label><?php echo __('badge_number'); ?></label>
-                <input type="text" name="numero_placa" required placeholder="<?php echo __('badge_placeholder'); ?>">
+                <label><?php echo __('label_dni'); ?></label>
+                <input type="text" name="agent_dni" required placeholder="<?php echo __('dni_placheholder'); ?>">
             </div>
 
             <div class="form-field">

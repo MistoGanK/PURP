@@ -1,7 +1,37 @@
-<?php require __DIR__ . '/layout/header.php'; ?>
+<?php
+require __DIR__ . '/layout/header.php';
+
+if (isset($_SESSION['flash'])) {
+    $flash = $_SESSION['flash'];
+    $bgState = 'alert-danger';
+    if ($flash['type'] === 'success') {
+        $bgState = 'alert-success';
+    } elseif ($flash['type'] === 'info') {
+        $bgState = 'alert-info';
+    }
+}
+?>
+
+<?php if (isset($_SESSION['flash'])): ?>
+    <?php $mensajes = is_array($flash['message']) ? $flash['message'] : [$flash['message']]; ?>
+    <div class="alert-container">
+        <?php foreach ($mensajes as $msg): ?>
+            <div class="alert <?php echo $bgState; ?>" role="alert">
+                <div class="flex-1">
+                    <?php echo $msg; ?>
+                </div>
+                <button onclick="this.parentElement.remove()" class="text-(--cool-steel) hover:text-(--characol) transition-colors cursor-pointer">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <?php unset($_SESSION['flash']); ?>
+<?php endif; ?>
 
 <main class="landing-container">
-
     <section class="mb-10">
         <h1 class="welcome-title"><?php echo __('landing_welcome'); ?></h1>
         <p class="welcome-subtitle"><?php echo __('landing_subtitle'); ?></p>
@@ -112,4 +142,5 @@
         </div>
     </div>
 </main>
+
 <?php require __DIR__ . '/layout/footer.php'; ?>

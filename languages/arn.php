@@ -46,6 +46,15 @@ return [
     'state_retired'         => 'Jubilat',
     'success_register'      => 'Usuari registrat damb èxit.',
     'unsuccess_register'    => 'Error en registrar er usuari. Per favor, intentatz-ho de nau.',
+    'state'                 => 'Estat',
+    'state_active'          => 'Actiu',
+    'state_inactive'        => 'Inactiu',
+
+    // User - Profile 
+    'title_user_profile'    => 'Perfil de l\'Agent',
+    'subtitle_user_profile' => 'Consulte es vòsti dates de credenciau e actualize era vòsta informacion de registre en sistèma.',
+    'profile_avatar_help'   => 'Clicatz ena icòna entà cambiar era fotografia oficiau',
+    'btn_save_changes'      => 'Desar es cambis',
 
     // MFA
     'mfa_setup_title'    => 'Configurer l\'Authentification à Double Facteur (MFA)',
@@ -54,10 +63,15 @@ return [
     'mfa_manual_text'    => 'Vous ne pouvez pas le scanner ? Saisissez cette clé manuellement dans votre application :',
     'mfa_code_label'     => 'Code de Confirmation à 6 chiffres',
     'btn_mfa_activate'   => 'Activer et Confirmer la Sécurité',
+    'mfa_already_active' => 'MFA (faktore) amuley.',
+    'success_update'     => 'Perfil actualizat corrèctament.',
+    'unsuccess_update'   => 'Error en actualizar eth perfil. Per favor, tornatz-lo a sajar.',
 
     // Errors Messages
     'error_duplicate_badge' => 'Eth numèro de placa introduït dejà ei registrat en sistèma.',
     'error_duplicate_dni'   => 'Eth DNI/NIE introduït dejà ei registrat en sistèma.',
+    'error_missing_id'      => 'Error: Non s\'a pogut identificar er usatgèr.',
+    'error_system'          => 'I a agut un error inesperat en sistèma.',
 
     // Landing - Bienvenida
     'landing_welcome'    => 'Benvenut ath Portau Unic de Registre Policiau',

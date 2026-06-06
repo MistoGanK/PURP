@@ -6,21 +6,35 @@ class HomeController
      * Loads landing visual interface
      * @return void
      */
-    public static function index()
+    public static function index(): void
     {
         require __DIR__ . '/../views/landing.php';
     }
+
     /**
-     * Set's new lang selected
+     * Sets new lang selected securely
      * @return void
      */
-    public static function set_lang()
+    public static function set_lang(): void
     {
-        $newLang = $_GET['lang'] ?? 'es';
+        $requestedLang = (string) ($_GET['lang'] ?? 'es');
 
-        $_SESSION['lang'] = $newLang;
+        $allowedLangs = ['es', 'ca', 'en', 'va', 'eu', 'gl', 'arn', 'ast', 'fr'];
 
-        $referer = $_SERVER['HTTP_REFERER'] ?? '/PURP/public/index.php?action=home';
+        if (in_array($requestedLang, $allowedLangs, true)) {
+            $_SESSION['lang'] = $requestedLang;
+        } else {
+            $_SESSION['lang'] = 'es';
+        }
+
+        $referer = (string) ($_SERVER['HTTP_REFERER'] ?? '/index.php?action=home');
+
+        // Prevention Open Direct
+        $host = (string) ($_SERVER['HTTP_HOST'] ?? '');
+        if (strpos($referer, 'http') === 0 && strpos($referer, $host) === false) {
+            $referer = '/index.php?action=home';
+        }
+
         header('Location: ' . $referer);
         exit;
     }

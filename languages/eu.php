@@ -45,6 +45,17 @@ return [
     'state_retired'         => 'Erretiratua',
     'success_register'      => 'Erabiltzailea ongi erregistratu da.',
     'unsuccess_register'    => 'Errorea erabiltzailea erregistratzean. Mesedez, saiatu berriro.',
+    'state'                 => 'Egoera',
+    'state_active'          => 'Aktiboa',
+    'state_inactive'        => 'Inaktiboa',
+
+    // User - Profile
+    'title_user_profile'    => 'Agentearen Profila',
+    'subtitle_user_profile' => 'Kontsultatu zure kredentzial-datuak eta eguneratu sistemako erregistro-informazioa.',
+    'profile_avatar_help'   => 'Egin klik ikonoan argazki ofiziala aldatzeko',
+    'btn_save_changes'      => 'Aldaketak gorde',
+    'success_update'        => 'Profila behar bezala eguneratu da.',
+    'unsuccess_update'      => 'Errorea profila eguneratzean. Mesedez, saiatu berriro.',
 
     // MFA
     'mfa_setup_title'    => 'Faktore Bikoitzeko Autentifikazioa Konfiguratu (MFA)',
@@ -53,10 +64,13 @@ return [
     'mfa_manual_text'    => 'Ezin duzu eskaneatu? Sartu gako hau eskuz zure aplikazioan:',
     'mfa_code_label'     => '6 digituko Baieztapen Kodea',
     'btn_mfa_activate'   => 'Segurtasuna Aktibatu eta Baieztatu',
+    'mfa_already_active' => 'Faktore bikoitzeko autentikazioa (MFA) jada aktibatuta dago.',
 
     // Errors Messages 
     'error_duplicate_badge' => 'Sartutako plaka-zenbakia jada erregistratuta dago sisteman.',
     'error_duplicate_dni'   => 'Sartutako NAN/AIZ jada erregistratuta dago sisteman.',
+    'error_missing_id'      => 'Errorea: Ezin izan da erabiltzailea identifikatu.',
+    'error_system'          => 'Ustekabeko errore bat gertatu da sisteman.',
 
     // Landing - Bienvenida
     'landing_welcome'    => 'Ongi etorri Polizia Erregistro Atari Bakarrera',

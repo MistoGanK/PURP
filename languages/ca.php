@@ -46,6 +46,18 @@ return [
     'state_retired'         => 'Jubilat',
     'success_register'      => 'Usuari registrat amb èxit.',
     'unsuccess_register'    => "Error en registrar l'usuari. Si us plau, intenteu-ho de nou.",
+    'state'                 => 'Estat',
+    'state_active'          => 'Actiu',
+    'state_inactive'        => 'Inactiu',
+    'mfa_already_active'    => 'L\'autenticació de doble factor (MFA) ja està activada.',
+
+    // User - Profile
+    'title_user_profile'    => 'Perfil de l\'Agent',
+    'subtitle_user_profile' => 'Consulteu les vostres dades de credencial i actualitzeu la vostra informació de registre en el sistema.',
+    'profile_avatar_help'   => 'Feu clic a la icona per canviar la fotografia oficial',
+    'btn_save_changes'      => 'Desar els canvis',
+    'success_update'        => 'Perfil actualitzat correctament.',
+    'unsuccess_update'      => 'Error en actualitzar el perfil. Si us plau, torneu-ho a provar.',
 
     // MFA 
     'mfa_setup_title'       => 'Configurar Doble Factor (MFA)',
@@ -58,6 +70,8 @@ return [
     // Errors Messages 
     'error_duplicate_badge' => 'El número de placa introduït ja està registrat en el sistema.',
     'error_duplicate_dni'   => 'El DNI/NIE introduït ja està registrat en el sistema.',
+    'error_missing_id'      => 'Error: No s\'ha pogut identificar l\'usuari.',
+    'error_system'          => 'Ha ocorregut un error inesperat al sistema.',
 
     // Landing - Bienvenida
     'landing_welcome'    => 'Benvingut al Portal Únic de Registre Policial',

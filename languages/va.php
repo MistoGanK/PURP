@@ -46,6 +46,19 @@ return [
     'state_retired'         => 'Jubilat',
     'success_register'      => 'Usuari registrat amb èxit.',
     'unsuccess_register'    => "Error en registrar l'usuari. Per favor, intenteu-ho de nou.",
+    'state'                 => 'Estat',
+    'state_active'          => 'Actiu',
+    'state_inactive'        => 'Inactiu',
+
+    // User - Profile
+    'title_user_profile'    => 'Perfil de l\'Agent',
+    'subtitle_user_profile' => 'Consulteu les vostres dades de credencial i actualitzeu la vostra informació de registre en el sistema.',
+    'profile_avatar_help'   => 'Feu clic en l\'icona per a canviar la fotografia oficial',
+    'btn_save_changes'      => 'Guardar els canvis',
+    'success_update'        => 'Profilum recte renovatum est.',
+    'unsuccess_update'      => 'Error in renovando profilo. Quaeso iterum conare.',
+    'success_update'        => 'Perfil actualitzat correctament.',
+    'unsuccess_update'      => 'Error en actualitzar el perfil. Per favor, torneu a intentar-ho.',
 
     // MFA
     'mfa_setup_title'       => 'Configurar Doble Factor (MFA)',
@@ -54,6 +67,13 @@ return [
     'mfa_manual_text'       => 'No el podeu escanejar? Introduïu esta clau manualment en la vostra aplicació:',
     'mfa_code_label'        => 'Codi de Confirmació de 6 dígits',
     'btn_mfa_activate'      => 'Activar i Confirmar Seguretat',
+    'mfa_already_active'    => 'L\'autenticació de doble factor (MFA) ja està activada.',
+
+    // Errors Messages (Valenciano)
+    'error_duplicate_badge' => 'El número de placa introduït ja està registrat en el sistema.',
+    'error_duplicate_dni'   => 'El DNI/NIE introduït ja està registrat en el sistema.',
+    'error_missing_id'      => 'Error: No s\'ha pogut identificar l\'usuari.',
+    'error_system'          => 'Ha ocorregut un error inesperat en el sistema.',
 
     // Landing - Bienvenida
     'landing_welcome'    => 'Benvingut al Portal Únic de Registre Policial',

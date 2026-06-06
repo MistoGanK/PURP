@@ -46,7 +46,18 @@ return [
     'state_retired'         => 'Retraité',
     'success_register'      => 'Utilisateur enregistré avec succès.',
     'unsuccess_register'    => "Erreur lors de l'enregistrement de l'utilisateur. Veuillez réessayer.",
+    'state'                 => 'État',
+    'state_active'          => 'Actif',
+    'state_inactive'        => 'Inactif',
 
+    // User - Profile
+    'title_user_profile'    => 'Profil de l\'Agent',
+    'subtitle_user_profile' => 'Consultez vos données d\'identification et mettez à jour vos informations d\'inscription dans le système.',
+    'profile_avatar_help'   => 'Cliquez sur l\'icône pour modifier la photographie officielle',
+    'btn_save_changes'      => 'Enregistrer les modifications',
+    'success_update'        => 'Profil mis à jour avec succès.',
+    'unsuccess_update'      => 'Erreur lors de la mise à jour du profil. Veuillez réessayer.',
+    
     // MFA 
     'mfa_setup_title'       => 'Configurer l\'Authentification à Double Facteur (MFA)',
     'mfa_setup_subtitle'    => 'Scannez le code QR avec votre application d\'authentification (Aegis, Google Authenticator) pour lier votre identifiant de police.',
@@ -54,10 +65,14 @@ return [
     'mfa_manual_text'       => 'Vous ne pouvez pas le scanner ? Saisissez cette clé manuellement dans votre application :',
     'mfa_code_label'        => 'Code de Confirmation à 6 chiffres',
     'btn_mfa_activate'      => 'Activer et Confirmer la Sécurité',
+    'mfa_already_active'    => 'L\'authentification multifacteur (MFA) est déjà activée.',
 
     // Errors Messages
     'error_duplicate_badge' => 'Le numéro de matricule saisi est déjà enregistré dans le système.',
     'error_duplicate_dni'   => 'Le DNI/NIE saisi est déjà enregistré dans le système.',
+    'error_missing_id'      => 'Erreur : L\'utilisateur n\'a pas pu être identifié.',
+    'error_system'          => 'Une erreur système inattendue s\'est produite.',
+
 
     // Landing - Bienvenida
     'landing_welcome'    => 'Bienvenue sur le Portail Unique d\'Enregistrement Policier',

@@ -16,6 +16,7 @@ return [
     'login_page_title'      => 'Acceso al sistema',
     'badge_number'          => 'Número de placa',
     'badge_placeholder'     => 'Ej. 12345',
+    'dni_placheholder'      => 'Ej. 43010887W',
     'password_label'        => 'Contraseña',
     'btn_login'             => 'Entrar',
     'auth_fail'             => 'Usuario o contraseña incorrecta',
@@ -38,13 +39,24 @@ return [
     'role_supervisor'       => 'Supervisor',
     'role_agent'            => 'Agente',
     'role_inquiry'          => 'Consulta',
+    'state'                 => 'Estado',
     'state_active'          => 'Activo',
+    'state_inactive'        => 'Inactivo',
     'state_sick_leave'      => 'Baja médica',
     'state_duty_suspended'  => 'Suspendido de funciones',
     'state_sanctioned'      => 'Sancionado',
     'state_retired'         => 'Jubilado',
     'success_register'      => 'Usuario registrado con éxito.',
     'unsuccess_register'    => 'Error al registrar el usuario. Por favor, inténtelo de nuevo.',
+
+    // User - Profile
+    'title_user_profile'   => 'Perfil del Agente',
+    'subtitle_user_profile' => 'Consulte sus datos de credencial y actualice su información de registro en el sistema.',
+    'profile_avatar_help'  => 'Haga clic en el icono para cambiar la fotografía oficial',
+    'btn_back_home'        => 'Volver a inicio',
+    'btn_save_changes'     => 'Guardar Cambios',
+    'success_update'       => 'Perfil actualizado correctamente.',
+    'unsuccess_update'     => 'Error al actualizar el perfil. Por favor, inténtelo de nuevo.',
 
     // MFA
     'mfa_setup_title'       => 'Configurar Doble Factor (MFA)',
@@ -53,10 +65,13 @@ return [
     'mfa_manual_text'       => '¿No puede escanearlo? Introduzca esta clave manualmente en su app:',
     'mfa_code_label'        => 'Código de Confirmación de 6 dígitos',
     'btn_mfa_activate'      => 'Activar y Confirmar Seguridad',
+    'mfa_already_active'    => 'La autenticación de doble factor (MFA) ya está activa.',
 
     // Erros Messages
     'error_duplicate_badge' => 'El número de placa introducido ya está registrado en el sistema.',
     'error_duplicate_dni'   => 'El DNI/NIE introducido ya está registrado en el sistema.',
+    'error_missing_id'      => 'Error: No se pudo identificar el usuario.',
+    'error_system'          => 'Ha ocurrido un error inesperado en el sistema.',
 
     // Landing - Bienvenida
     'landing_welcome'    => 'Bienvenido al Portal Único de Registro Policial',

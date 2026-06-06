@@ -6,7 +6,7 @@ class AuthController
      * Loads login visual interface
      * @return void
      */
-    public static function showLogin()
+    public static function showLogin(): void
     {
         require __DIR__ . '/../views/auth/login.php';
     }
@@ -16,13 +16,13 @@ class AuthController
      * Verify credentials & hash
      * @return never Redirect to home at success
      */
-    public static function login()
+    public static function login(): void
     {
-        $placa = $_POST['numero_placa'] ?? '';
-        $password = $_POST['password'] ?? '';
+        $agent_dni = (string) ($_POST['agent_dni'] ?? '');
+        $password = (string) ($_POST['password'] ?? '');
 
         $userModel = new User();
-        $user = $userModel->findByPlaca($placa);
+        $user = $userModel->findByDni($agent_dni);
 
         if (!$user || !password_verify($password, $user['password_hash'])) {
             $_SESSION['flash'] = [
@@ -42,12 +42,13 @@ class AuthController
 
         // If not MFA set up, normal login
         $role = tipoUsuario::tryFrom($user['tipo_usuario']);
+
         $_SESSION['user'] = [
-            'agent_id'              => $user['id_usuario'],
-            'agent_plate'           => $user['numero_placa'],
-            'agent_dni'             => $user['dni'],
-            'agent_name'            => $user['nombre'],
-            'agent_user_role'       => $user['tipo_usuario'],
+            'agent_id'              => (int) $user['id_usuario'],
+            'agent_plate'           => (string) $user['numero_placa'],
+            'agent_dni'             => (string) $user['dni'],
+            'agent_name'            => (string) $user['nombre'],
+            'agent_user_role'       => (int) $user['tipo_usuario'],
             'agent_category_role'   => $role ? $role->name : 10
         ];
 
@@ -55,13 +56,29 @@ class AuthController
         exit;
     }
 
-    /** Destroy session & disconnect user
+    /** * Destroy session & disconnect user securely
      * Redirect to home
      * @return never
      */
-    public static function logout()
+    public static function logout(): void
     {
+        $_SESSION = [];
+
+        if (ini_get("session.use_cookies")) {
+            $params = session_get_cookie_params();
+            setcookie(
+                session_name(),
+                '',
+                time() - 42000,
+                $params["path"],
+                $params["domain"],
+                $params["secure"],
+                $params["httponly"]
+            );
+        }
+
         session_destroy();
+
         header('Location: index.php?action=home');
         exit;
     }
