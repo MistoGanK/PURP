@@ -55,19 +55,6 @@ if (isset($_SESSION['user'])) {
         header('Location: index.php?action=home');
         exit;
     }
-
-    // MFA check
-    if ($current_action === 'setup_mfa') {
-        $userModel = new User();
-        if ($userModel->checkActiveMfa((int) $_SESSION['user']['agent_id'])) {
-            $_SESSION['flash'] = [
-                'type' => 'info',
-                'message' => __('mfa_already_active')
-            ];
-            header('Location: index.php?action=home');
-            exit;
-        }
-    }
 }
 
 ini_set('display_errors', 1);
@@ -100,6 +87,7 @@ $router->post('denuncia_guardar', [DenunciaController::class,   'guardar']);
 $router->post('createUser',       [UserController::class,       'createUser']);
 $router->post('createUser',       [UserController::class,       'createUser']);
 $router->post('update_profile',   [UserController::class,       'updateProfile']);
+$router->post('verify_mfa',       [MfaController::class,        'verifyMfa']);
 
 // POST MfaController
 $router->post('confirm_mfa',      [MfaController::class,        'confirmMfa']);

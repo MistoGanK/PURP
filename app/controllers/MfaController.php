@@ -10,9 +10,25 @@ class MfaController
    */
   public static function setUpMfa()
   {
-    // Only an account can configure it
+    // Only logged users && with no MFA set up
     if (!isset($_SESSION['user'])) {
       header('Location: index.php?action=login');
+      exit;
+    }
+    // Checks if has MFA setup
+    $userModel = new User;
+    $agent_id = (int) ($_SESSION['user']['agent_id'] ?? 0);
+
+    $hasMfa = $userModel->checkActiveMfa($agent_id);
+
+    if ($hasMfa) {
+
+      $_SESSION['flash'] = [
+        'type'    => 'info',
+        'message' => __('mfa_already_active')
+      ];
+
+      header('Location: index.php?action=home');
       exit;
     }
 

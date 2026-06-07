@@ -34,6 +34,7 @@ class AuthController
             exit;
         }
 
+        // If user has MFA set up, verify mfa
         if (!empty($user['mfa_secret'])) {
             $_SESSION['mfa_pending_user'] = $user;
             header('Location: index.php?action=verify_mfa');
@@ -44,12 +45,16 @@ class AuthController
         $role = tipoUsuario::tryFrom($user['tipo_usuario']);
 
         $_SESSION['user'] = [
-            'agent_id'              => (int) $user['id_usuario'],
-            'agent_plate'           => (string) $user['numero_placa'],
-            'agent_dni'             => (string) $user['dni'],
-            'agent_name'            => (string) $user['nombre'],
-            'agent_user_role'       => (int) $user['tipo_usuario'],
-            'agent_category_role'   => $role ? $role->name : 10
+            'agent_id'                  => (int) $user['id_usuario'],
+            'agent_plate'               => (string) $user['numero_placa'],
+            'agent_dni'                 => (string) $user['dni'],
+            'agent_name'                => (string) $user['nombre'],
+            'agent_user_role'           => (int) $user['tipo_usuario'] ?? 50,
+            'agent_category_role'       => (int) ($user['categoria_profesional'] ?? 10),
+            'agent_forenames'           => (string) ($user['apellidos'] ?? ''),
+            'agent_profesional_state'   => (int) ($user['estado_profesional'] ?? 10),
+            'agent_active'              => (int) ($user['activo'] ?? 1),
+            'avatar_img_src'            => (string) ($user['avatar_img_src'] ?? '/assets/images/default-avatar.png')
         ];
 
         header('Location: index.php?action=home');

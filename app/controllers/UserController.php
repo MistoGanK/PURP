@@ -3,12 +3,18 @@
 class UserController
 {
   /**
-   * Loads the user registration visual interface.
+   * Loads the user registration visual interface (Only for Admins).
    * * @return void
    */
   public static function showRegister(): void
   {
-    require __DIR__ . '/../views/user/register.php';
+    $currentRole = (int) $_SESSION['user']['agent_user_role'] ?? 50;
+    if ($currentRole <= 20) {
+      require __DIR__ . '/../views/user/register.php';
+    } else {
+      header('Location: /index.php?action=home');
+      exit;
+    }
   }
 
   /**
@@ -94,17 +100,34 @@ class UserController
    */
   public static function updateProfile(): void
   {
+    // Control user's access
+    $sessionUser = $_SESSION['user'] ?? [];
+
+    $currentRole    = (int) $sessionUser['agent_user_role'] ?? 0;
+    $sessionUserId  = (int) $sessionUser['agent_id'] ?? 0;
+    $postAgentId    = (int) $_POST['agent_id'] ?? 0;
+
+    // Check possible bypass
+    if ($currentRole > 20 && $sessionUserId !== $postAgentId) {
+      header('Location: /index.php?action=login');
+      // TODO: CREATE LOG FOR ATACKS
+      exit;
+    }
+
+    $isAdmin = ($currentRole <= 20);
+
     $data = [
-      'avatar_img_src'          => (string)   ($_POST['avatar_img_src'] ?? '/assets/images/default-avatar.png'),
-      'agent_id'                => (int)      ($_POST['agent_id'] ?? 0),
-      'agent_name'              => (string)   ($_POST['agent_name'] ?? ''),
-      'agent_forenames'         => (string)   ($_POST['agent_forenames'] ?? ''),
-      'agent_dni'               => (string)   ($_POST['agent_dni'] ?? ''),
-      'agent_plate'             => (string)   ($_POST['agent_plate'] ?? ''),
-      'agent_user_role'         => (int)      ($_POST['agent_user_role'] ?? 0),
-      'agent_category_role'     => (int)      ($_POST['agent_category_role'] ?? 0),
-      'agent_profesional_state' => (int)      ($_POST['agent_profesional_state'] ?? 0),
-      'agent_active'            => (int)      ($_POST['agent_active'] ?? 1)
+      'avatar_img_src'          => (string)   ($_POST['avatar_img_src'] ?? '/assets/images/users/avatar_src/default-avatar.png'),
+
+      'agent_id'                =>            $isAdmin ? $postAgentId                                : $sessionUserId,
+      'agent_name'              => (string)   ($isAdmin ? ($_POST['agent_name'] ?? '')               : ($sessionUser['agent_name'])),
+      'agent_forenames'         => (string)   ($isAdmin ? ($_POST['agent_forenames'] ?? '')          : ($sessionUser['agent_forenames'])),
+      'agent_dni'               => (string)   ($isAdmin ? ($_POST['agent_dni'] ?? '')                : ($sessionUser['agent_dni'])),
+      'agent_plate'             => (string)   ($isAdmin ? ($_POST['agent_plate'] ?? '')              : ($sessionUser['agent_plate'])),
+      'agent_user_role'         => (int)      ($isAdmin ? ($_POST['agent_user_role'] ?? 50)          : ($sessionUser['agent_user_role'])),
+      'agent_category_role'     => (int)      ($isAdmin ? ($_POST['agent_category_role'] ?? 10)      : ($sessionUser['agent_category_role'])),
+      'agent_profesional_state' => (int)      ($isAdmin ? ($_POST['agent_profesional_state'] ?? 10)  : ($sessionUser['agent_profesional_state'])),
+      'agent_active'            => (int)      ($isAdmin ? ($_POST['agent_active'] ?? 1)              : ($sessionUser['agent_active']))
     ];
 
     if (empty($data['agent_id'])) {

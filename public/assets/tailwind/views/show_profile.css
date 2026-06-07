@@ -64,3 +64,15 @@
 .profile-form-actions {
   @apply flex flex-col sm:flex-row items-center gap-4 pt-4 border-t border-(--platinium) mt-2;
 }
+
+/* Campos Deshabilitados / Bloqueados */
+input:disabled,
+select:disabled,
+textarea:disabled {
+  @apply !bg-(--platinium) 
+         !text-(--characol) 
+         !border-(--cool-steel) 
+         opacity-70 
+         cursor-not-allowed 
+         select-none;
+}

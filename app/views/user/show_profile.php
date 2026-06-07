@@ -1,7 +1,9 @@
 <?php
 require_once __DIR__ . '/../layout/header_public.php';
 
-// Gestión de mensajes flash
+$currentRole = (int)($_SESSION['user']['agent_user_role'] ?? 0);
+$isAdmin     = ($currentRole <= 20);
+
 if (isset($_SESSION['flash'])) {
     $flash = $_SESSION['flash'];
     $bgRegisterState = 'alert-danger'; // default
@@ -47,16 +49,16 @@ if (isset($_SESSION['flash'])) {
             </h2>
         </div>
 
-        <form action="index.php?action=update_profile" method="POST" class="form-layout">
+        <form action="index.php?action=update_profile" method="POST" enctype="multipart/form-data" class="form-layout">
 
             <input type="hidden" name="agent_id" value="<?php echo htmlspecialchars($usuarioActual['id_usuario'] ?? ''); ?>">
 
             <div class="profile-avatar-section">
                 <div class="profile-avatar-wrapper">
                     <?php
-                    $avatarSrc = (isset($usuarioActual['media_src']) && !empty($usuarioActual['media_src']))
-                        ? $usuarioActual['media_src']
-                        : '/assets/images/users/avatar_src/default-avatar.png';
+                    $avatarSrc = (isset($usuarioActual['avatar_img_src']) && !empty($usuarioActual['avatar_img_src']))
+                        ? $usuarioActual['avatar_img_src']
+                        : 'assets/images/users/avatar_src/default-avatar.png';
                     ?>
                     <img id="avatar-preview" src="<?php echo $avatarSrc; ?>" alt="Fotografía del Agente" class="profile-avatar-img">
 
@@ -74,27 +76,27 @@ if (isset($_SESSION['flash'])) {
             <div class="profile-fields-grid">
                 <div class="form-field">
                     <label><?php echo __('label_nombre') ?? 'Nombre'; ?></label>
-                    <input type="text" name="agent_name" value="<?php echo htmlspecialchars($usuarioActual['nombre'] ?? ''); ?>" required placeholder="Ex. Joan">
+                    <input type="text" name="agent_name" value="<?php echo htmlspecialchars($usuarioActual['nombre'] ?? ''); ?>" required placeholder="Ex. Joan" <?php echo !$isAdmin ? 'disabled' : ''; ?>>
                 </div>
 
                 <div class="form-field">
                     <label><?php echo __('label_apellidos') ?? 'Apellidos'; ?></label>
-                    <input type="text" name="agent_forenames" value="<?php echo htmlspecialchars($usuarioActual['apellidos'] ?? ''); ?>" required placeholder="Ex. García Pérez">
+                    <input type="text" name="agent_forenames" value="<?php echo htmlspecialchars($usuarioActual['apellidos'] ?? ''); ?>" required placeholder="Ex. García Pérez" <?php echo !$isAdmin ? 'disabled' : ''; ?>>
                 </div>
 
                 <div class="form-field">
                     <label><?php echo __('label_dni') ?? 'DNI / NIE'; ?></label>
-                    <input type="text" name="agent_dni" value="<?php echo htmlspecialchars($usuarioActual['dni'] ?? ''); ?>" required placeholder="Ex. 12345678X">
+                    <input type="text" name="agent_dni" value="<?php echo htmlspecialchars($usuarioActual['dni'] ?? ''); ?>" required placeholder="Ex. 12345678X" <?php echo !$isAdmin ? 'disabled' : ''; ?>>
                 </div>
 
                 <div class="form-field">
                     <label><?php echo __('badge_number') ?? 'Número de placa'; ?></label>
-                    <input type="text" name="agent_plate" value="<?php echo htmlspecialchars($usuarioActual['numero_placa'] ?? ''); ?>" required placeholder="<?php echo __('badge_placeholder'); ?>">
+                    <input type="text" name="agent_plate" value="<?php echo htmlspecialchars($usuarioActual['numero_placa'] ?? ''); ?>" required placeholder="<?php echo __('badge_placeholder'); ?>" <?php echo !$isAdmin ? 'disabled' : ''; ?>>
                 </div>
 
                 <div class="form-field">
                     <label><?php echo __('label_role') ?? 'Rol del sistema'; ?></label>
-                    <select name="agent_user_role" required>
+                    <select name="agent_user_role" required <?php echo !$isAdmin ? 'disabled' : ''; ?>>
                         <?php foreach (tipoUsuario::jsonOptions() as $opcion): ?>
                             <option value="<?php echo $opcion['value']; ?>" <?php echo (isset($usuarioActual['tipo_usuario']) && $usuarioActual['tipo_usuario'] == $opcion['value']) ? 'selected' : ''; ?>>
                                 <?php echo $opcion['label']; ?>
@@ -105,7 +107,7 @@ if (isset($_SESSION['flash'])) {
 
                 <div class="form-field">
                     <label><?php echo __('label_category') ?? 'Categoría policial'; ?></label>
-                    <select name="agent_category_role" required>
+                    <select name="agent_category_role" required <?php echo !$isAdmin ? 'disabled' : ''; ?>>
                         <?php foreach (categoriaProfesional::jsonOptions() as $opcion): ?>
                             <option value="<?php echo $opcion['value']; ?>" <?php echo (isset($usuarioActual['categoria_profesional']) && $usuarioActual['categoria_profesional'] == $opcion['value']) ? 'selected' : ''; ?>>
                                 <?php echo $opcion['label']; ?>
@@ -116,7 +118,7 @@ if (isset($_SESSION['flash'])) {
 
                 <div class="form-field md:col-span-2">
                     <label><?php echo __('label_status') ?? 'Estado professional'; ?></label>
-                    <select name="agent_profesional_state" required>
+                    <select name="agent_profesional_state" required <?php echo !$isAdmin ? 'disabled' : ''; ?>>
                         <?php foreach (estadoProfesional::jsonOptions() as $opcion): ?>
                             <option value="<?php echo $opcion['value']; ?>" <?php echo (isset($usuarioActual['estado_profesional']) && $usuarioActual['estado_profesional'] == $opcion['value']) ? 'selected' : ''; ?>>
                                 <?php echo $opcion['label']; ?>
@@ -128,7 +130,7 @@ if (isset($_SESSION['flash'])) {
 
             <div class="form-field">
                 <label><?php echo __('state'); ?></label>
-                <select name="agent_active" required>
+                <select name="agent_active" required <?php echo !$isAdmin ? 'disabled' : ''; ?>>
                     <option value="1" <?php echo (isset($usuarioActual['activo']) && $usuarioActual['activo'] == '1') ? 'selected' : ''; ?>>
                         <?php echo __('state_active'); ?>
                     </option>
