@@ -66,14 +66,16 @@ return [
     'mfa_code_label'        => 'Code de Confirmation à 6 chiffres',
     'btn_mfa_activate'      => 'Activer et Confirmer la Sécurité',
     'mfa_already_active'    => 'L\'authentification multifacteur (MFA) est déjà activée.',
+    'security_alert'        => 'Sécurité vulnérable',
+    '2fa_warning_text'      => 'Vous n\'avez pas activé le deuxième facteur d\'authentification (2FA). Protégez votre compte de police depuis votre profil.',
+    'activate_now'          => 'Activer maintenant →',
 
     // Errors Messages
     'error_duplicate_badge' => 'Le numéro de matricule saisi est déjà enregistré dans le système.',
     'error_duplicate_dni'   => 'Le DNI/NIE saisi est déjà enregistré dans le système.',
     'error_missing_id'      => 'Erreur : L\'utilisateur n\'a pas pu être identifié.',
     'error_system'          => 'Une erreur système inattendue s\'est produite.',
-
-
+    
     // Landing - Bienvenida
     'landing_welcome'    => 'Bienvenue sur le Portail Unique d\'Enregistrement Policier',
     'landing_subtitle'   => 'Centralisez et gérez les plaintes de manière efficace et sécurisée.',

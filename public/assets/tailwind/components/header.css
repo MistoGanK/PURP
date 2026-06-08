@@ -28,6 +28,9 @@
   .user-actions {
     @apply flex items-center gap-6;
   }
+  .user-avatar {
+    @apply h-8 w-8 rounded-full object-cover inline-block align-middle mr-2;
+  }
   .lang-widget {
     @apply flex items-center gap-2 text-sm bg-(--white)/10 px-2 py-1 rounded border border-(--white)/20;
   }
@@ -37,6 +40,14 @@
 
   .user-profile {
     @apply flex items-center gap-2 cursor-pointer hover:text-(--platinium);
+  }
+
+  .user-avatar {
+    @apply h-8 w-8 rounded-full object-cover inline-block align-middle mr-2 cursor-pointer transition-opacity hover:opacity-80;
+  }
+
+  .avatar-fallback {
+    @apply cursor-pointer inline-block align-middle mr-2 transition-transform hover:scale-110;
   }
 
   .logout-link {

@@ -68,6 +68,9 @@ return [
     'mfa_code_label'        => 'Codi de Confirmació de 6 dígits',
     'btn_mfa_activate'      => 'Activar i Confirmar Seguretat',
     'mfa_already_active'    => 'L\'autenticació de doble factor (MFA) ja està activada.',
+    'security_alert'        => 'Seguretat vulnerable',
+    '2fa_warning_text'      => 'No tens activat el Segon Factor d’Autenticació (2FA). Protegix el teu compte policial des del teu perfil.',
+    'activate_now'          => 'Activar ara →',
 
     // Errors Messages (Valenciano)
     'error_duplicate_badge' => 'El número de placa introduït ja està registrat en el sistema.',

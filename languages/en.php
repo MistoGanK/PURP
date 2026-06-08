@@ -66,14 +66,15 @@ return [
     'mfa_code_label'        => '6-digit Confirmation Code',
     'btn_mfa_activate'      => 'Activate and Confirm Security',
     'mfa_already_active'    => 'Multi-factor authentication (MFA) is already enabled.',
+    'security_alert'        => 'Vulnerable security',
+    '2fa_warning_text'      => 'You do not have Second-Factor Authentication (2FA) activated. Protect your police account from your profile.',
+    'activate_now'          => 'Activate now →',
 
     // Erros Messages
     'error_duplicate_badge' => 'The entered badge number is already registered in the system.',
     'error_duplicate_dni'   => 'The entered DNI/NIE is already registered in the system.',
     'error_missing_id'      => 'Error: User ID could not be identified.',
     'error_system'          => 'An unexpected system error occurred.',
-
-
 
     // Landing - Bienvenida
     'landing_welcome'    => 'Welcome to the Unique Police Registry Portal',

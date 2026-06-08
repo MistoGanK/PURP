@@ -5,11 +5,8 @@
 
   .alert {
     @apply pointer-events-auto;
-
     @apply flex items-center gap-4 px-6 py-4 min-w-[340px] max-w-[90vw];
-
     @apply bg-(--white) rounded-xl shadow-2xl border border-(--platinium);
-
     @apply text-base font-(--inter-medium) text-(--characol) transition-all duration-300;
   }
 
@@ -30,9 +27,57 @@
   .alert-warning {
     @apply border-l-[6px] border-l-(--goldenrod) text-(--goldenrod);
   }
-  
+
   /* Info Alert */
   .alert-info {
     @apply border-l-[6px] border-l-(--cerulean) text-(--cerulean);
+  }
+
+  /* 2F alerts */
+  .twofa-alert-container {
+    @apply relative inline-block ml-2 cursor-help;
+  }
+
+  .twofa-alert-icon {
+    @apply text-(--carmine) font-["Inter-Bold"] text-lg select-none;
+  }
+
+  .twofa-popup {
+    @apply absolute right-0 top-full mt-2 w-64 p-4 rounded-xl shadow-2xl z-50;
+    @apply bg-(--white) border border-(--platinium);
+    @apply text-xs text-left normal-case tracking-normal text-(--characol) font-["Inter-Medium"];
+    @apply opacity-0 pointer-events-none transition-all duration-200 transform -translate-y-1;
+  }
+
+  .twofa-popup::before {
+    content: "";
+    @apply absolute left-0 right-0 -top-2 h-2 pointer-events-auto;
+  }
+
+  .twofa-alert-container:hover .twofa-popup {
+    @apply opacity-100 pointer-events-auto translate-y-0;
+  }
+
+  .twofa-popup-title {
+    @apply font-["Inter-Bold"] text-(--carmine) mb-1 flex items-center gap-1;
+  }
+
+  .twofa-popup-text {
+    @apply text-(--characol) leading-relaxed;
+  }
+
+  .twofa-popup-action {
+    @apply mt-2 text-right;
+  }
+
+  .twofa-popup-action a {
+    @apply text-(--blue-brand) font-["Inter-Semibold"] hover:underline transition-colors duration-150;
+  }
+
+  .twofa-popup-arrow {
+    @apply absolute right-3 bottom-full w-0 h-0;
+    @apply border-l-8 border-l-transparent;
+    @apply border-r-8 border-r-transparent;
+    @apply border-b-8 border-b-(--white);
   }
 }

@@ -66,6 +66,9 @@ return [
     'mfa_already_active' => 'MFA (faktore) amuley.',
     'success_update'     => 'Perfil actualizat corrèctament.',
     'unsuccess_update'   => 'Error en actualizar eth perfil. Per favor, tornatz-lo a sajar.',
+    'security_alert'     => 'Seguretat vulnerable',
+    '2fa_warning_text'   => 'Non as activat eth Dusau Factor d’Autenticacion (2FA). Protegís eth teu compde policial des deth teu perfil.',
+    'activate_now'       => 'Activar ara →',
 
     // Errors Messages
     'error_duplicate_badge' => 'Eth numèro de placa introduït dejà ei registrat en sistèma.',

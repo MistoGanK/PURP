@@ -49,14 +49,23 @@
           <div class="user-profile">
             <span>👤</span>
             <button onclick="(() => location = 'index.php?action=show_profile')()"><?php echo $_SESSION['user']['agent_name'] ?? __('guest'); ?></button>
+
+            <?php if (empty($_SESSION['user']['has_2fa']) || $_SESSION['user']['has_2fa'] === false): ?>
+              <div class="twofa-alert-container">
+                <span class="twofa-alert-icon">⚠️</span>
+
+                <div class="twofa-popup">
+                  <p class="twofa-popup-title">🔒 <?php echo __('security_alert', 'Seguridad vulnerable'); ?></p>
+                  <p class="twofa-popup-text"><?php echo __('2fa_warning_text', 'No tienes activado el Segundo Factor de Autenticación (2FA). Protege tu cuenta policial desde tu perfil.'); ?></p>
+                  <div class="twofa-popup-action">
+                    <a href="index.php?action=setup_mfa"><?php echo __('activate_now', 'Activar ahora →'); ?></a>
+                  </div>
+                  <div class="twofa-popup-arrow"></div>
+                </div>
+              </div>
+            <?php endif; ?>
           </div>
 
-          <span class="nav-separator">|</span>
-
-          <a href="index.php?action=logout" class="logout-link">
-            <?php echo __('nav_logout'); ?>
-          </a>
-        <?php else: ?>
           <span class="nav-separator">|</span>
 
           <a href="index.php?action=login" class="login-link">

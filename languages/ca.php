@@ -66,6 +66,9 @@ return [
     'mfa_manual_text'       => 'No el podeu escanejar? Introduïu aquesta clau manualment a la vostra aplicació:',
     'mfa_code_label'        => 'Codi de Confirmació de 6 dígits',
     'btn_mfa_activate'      => 'Activar i Confirmar Seguretat',
+    'security_alert'        => 'Seguretat vulnerable',
+    '2fa_warning_text'      => 'No tens activat el Segon Factor d’Autenticació (2FA). Protegeix el teu compte policial des del teu perfil.',
+    'activate_now'          => 'Activar ara →',
 
     // Errors Messages 
     'error_duplicate_badge' => 'El número de placa introduït ja està registrat en el sistema.',

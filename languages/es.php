@@ -66,6 +66,9 @@ return [
     'mfa_code_label'        => 'Código de Confirmación de 6 dígitos',
     'btn_mfa_activate'      => 'Activar y Confirmar Seguridad',
     'mfa_already_active'    => 'La autenticación de doble factor (MFA) ya está activa.',
+    'security_alert'        => 'Seguridad vulnerable',
+    '2fa_warning_text'      => 'No tienes activado el Segundo Factor de Autenticación (2FA). Protege tu cuenta policial desde tu perfil.',
+    'activate_now'          => 'Activar ahora →',
 
     // Erros Messages
     'error_duplicate_badge' => 'El número de placa introducido ya está registrado en el sistema.',

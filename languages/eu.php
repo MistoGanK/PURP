@@ -65,6 +65,9 @@ return [
     'mfa_code_label'     => '6 digituko Baieztapen Kodea',
     'btn_mfa_activate'   => 'Segurtasuna Aktibatu eta Baieztatu',
     'mfa_already_active' => 'Faktore bikoitzeko autentikazioa (MFA) jada aktibatuta dago.',
+    'security_alert'     => 'Segurtasun zaurgarria',
+    '2fa_warning_text'   => 'Ez duzu Bi Faktoreko Autentifikazioa (2FA) aktibatuta. Babestu zure polizia-kontua zure profiletik.',
+    'activate_now'       => 'Aktibatu orain →',
 
     // Errors Messages 
     'error_duplicate_badge' => 'Sartutako plaka-zenbakia jada erregistratuta dago sisteman.',
