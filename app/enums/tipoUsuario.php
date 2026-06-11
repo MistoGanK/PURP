@@ -1,5 +1,7 @@
 <?php
 
+namespace App\enums;
+
 enum tipoUsuario: int
 {
     case SUPER_ADMIN = 10;

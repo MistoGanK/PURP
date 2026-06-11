@@ -1,4 +1,7 @@
 <?php
+
+namespace App\enums;
+
 enum categoriaProfesional: int
 {
   case AGENTE        = 10;

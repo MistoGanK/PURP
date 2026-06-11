@@ -1,11 +1,75 @@
 @layer components {
+  /* Contenedor general de la pantalla */
   .denuncias-screen {
     @apply max-w-6xl mx-auto py-12;
   }
+
+  /* Contenedor del listado */
   .denuncias-list {
     @apply bg-(--white) border border-(--platinium) rounded-lg overflow-hidden;
   }
+
+  /* Cabecera de la sección (Título y botones alineados) */
+  .denuncias-header {
+    @apply flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-(--platinium);
+  }
+
+  /* Título de la sección */
+  .denuncias-title {
+    @apply text-2xl font-["Montserrat-Bold"] text-(--black);
+  }
+
+  /* Fila superior estilo cabecera de base de datos (DBeaver / DataGrip) */
+  .denuncias-table-header {
+    @apply hidden md:grid grid-cols-12 gap-4 px-6 py-3 bg-(--snow) border-b border-(--platinium) text-xs font-["Inter-Bold"] text-(--characol) uppercase;
+  }
+
+  /* Cada fila individual de la tabla */
   .denuncia-item {
-    @apply p-6 border-b border-(--platinium) last:border-b-0;
+    @apply grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 items-center p-6 bg-(--white) border-b border-(--platinium) last:border-b-0 hover:bg-slate-50/60 transition-colors duration-150;
+  }
+
+  /* Etiquetas de asistencia para smartphones (se ocultan en pantallas de escritorio) */
+  .denuncia-responsive-label {
+    @apply md:hidden text-[10px] font-["Inter-Bold"] text-(--cool-steel) uppercase block w-24 shrink-0;
+  }
+
+  /* --- Estilos específicos de las Celdas --- */
+
+  /* Celda: Expediente */
+  .denuncia-col-exp {
+    @apply md:col-span-2 flex items-center md:block gap-2;
+  }
+  .denuncia-val-exp {
+    @apply font-["Inter-Bold"] text-sm text-(--blue-brand);
+  }
+
+  /* Celda: Naturaleza del Delito */
+  .denuncia-col-delito {
+    @apply md:col-span-3 flex items-center md:block gap-2;
+  }
+  .denuncia-val-title {
+    @apply text-sm font-["Inter-Semibold"] text-(--black);
+  }
+
+  /* Celda: Descripción de los Hechos */
+  .denuncia-col-hechos {
+    @apply md:col-span-5 flex items-start md:block gap-2 my-1 md:my-0;
+  }
+  .denuncia-val-description {
+    @apply text-xs text-(--characol) font-["Inter-Medium"] line-clamp-2 md:line-clamp-1 leading-relaxed;
+  }
+
+  /* Celda: Fecha */
+  .denuncia-col-fecha {
+    @apply md:col-span-2 flex items-center md:block gap-2 md:text-right;
+  }
+  .denuncia-val-meta {
+    @apply text-xs font-["Inter-Medium"] text-(--state-grey);
+  }
+
+  /* Contenedor cuando no hay registros en el sistema */
+  .denuncias-empty-state {
+    @apply p-8 text-center text-sm text-(--cool-steel) font-["Inter-Medium"] bg-(--white);
   }
 }

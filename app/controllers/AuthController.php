@@ -42,7 +42,7 @@ class AuthController
         }
 
         // If not MFA set up, normal login
-        $role = tipoUsuario::tryFrom($user['tipo_usuario']);
+        $role = \app\enums\tipoUsuario::tryFrom($user['tipo_usuario']);
 
         $_SESSION['user'] = [
             'agent_id'                  => (int) $user['id_usuario'],

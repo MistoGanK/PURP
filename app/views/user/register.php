@@ -1,22 +1,20 @@
 <?php
 require_once __DIR__ . '/../layout/header_public.php';
 
-// ENFOQUE SEGURIDAD: Eliminadas las bolsas de $_SESSION['errors'] y $_SESSION['old_input']
-// para evitar el rastreo de datos en el cliente tras un fallo.
-
 if (isset($_SESSION['flash'])) {
     $flash = $_SESSION['flash'];
     $bgRegisterState = $flash['type'] === 'success' ?  'alert-success' : 'alert-danger';
 };
+
 ?>
 
 <script>
     window.APP_CONFIG = {
-        categoriaProfesional: <?php echo json_encode(categoriaProfesional::jsonOptions()); ?>,
-        estadoProfesional: <?php echo json_encode(estadoProfesional::jsonOptions()); ?>,
-        tipoUsuario: <?php echo json_encode(tipoUsuario::jsonOptions()); ?>,
+        categoriaProfesional: <?php echo json_encode(\app\enums\categoriaProfesional::jsonOptions()); ?>,
+        estadoProfesional: <?php echo json_encode(\app\enums\estadoProfesional::jsonOptions()); ?>,
+        tipoUsuario: <?php echo json_encode(\app\enums\tipoUsuario::jsonOptions()); ?>,
         flash: <?php echo isset($flash) ? json_encode($flash) : 'null'; ?>
-    }; 
+    };
 </script>
 
 <?php if (isset($_SESSION['flash'])): ?>
@@ -79,7 +77,7 @@ if (isset($_SESSION['flash'])) {
             <div class="form-field">
                 <label><?php echo __('label_role') ?? 'Rol del sistema'; ?></label>
                 <select name="tipo_usuario" required>
-                    <?php foreach (tipoUsuario::jsonOptions() as $opcion): ?>
+                    <?php foreach (\app\enums\tipoUsuario::jsonOptions() as $opcion): ?>
                         <option value="<?php echo $opcion['value']; ?>" <?php echo $opcion['value'] === 50 ? 'selected' : ''; ?>>
                             <?php echo $opcion['label']; ?>
                         </option>
@@ -90,7 +88,7 @@ if (isset($_SESSION['flash'])) {
             <div class="form-field">
                 <label><?php echo __('label_category') ?? 'Categoria policial'; ?></label>
                 <select name="categoria_profesional" required>
-                    <?php foreach (categoriaProfesional::jsonOptions() as $opcion): ?>
+                    <?php foreach (\app\enums\categoriaProfesional::jsonOptions() as $opcion): ?>
                         <option value="<?php echo $opcion['value']; ?>" <?php echo $opcion['value'] === 10 ? 'selected' : ''; ?>>
                             <?php echo $opcion['label']; ?>
                         </option>
@@ -101,7 +99,7 @@ if (isset($_SESSION['flash'])) {
             <div class="form-field">
                 <label><?php echo __('label_status') ?? 'Estat professional'; ?></label>
                 <select name="estado_profesional" required>
-                    <?php foreach (estadoProfesional::jsonOptions() as $opcion): ?>
+                    <?php foreach (\app\enums\estadoProfesional::jsonOptions() as $opcion): ?>
                         <option value="<?php echo $opcion['value']; ?>" <?php echo $opcion['value'] === 10 ? 'selected' : ''; ?>>
                             <?php echo $opcion['label']; ?>
                         </option>

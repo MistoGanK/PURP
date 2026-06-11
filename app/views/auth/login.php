@@ -49,7 +49,7 @@ if (isset($_SESSION['flash'])) {
         <form action="index.php?action=login" method="POST" class="form-layout">
             <div class="form-field">
                 <label><?php echo __('label_dni'); ?></label>
-                <input type="text" name="agent_dni" required placeholder="<?php echo __('dni_placheholder'); ?>">
+                <input type="text" name="agent_dni" required placeholder="<?php echo __('denuncias'); ?>">
             </div>
 
             <div class="form-field">

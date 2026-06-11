@@ -1,5 +1,7 @@
 <?php
 
+namespace App\enums;
+
 enum estadoProfesional: int
 {
   case ACTIVO               = 10;

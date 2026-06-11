@@ -1,5 +1,7 @@
 <?php
 
+namespace App\enums;
+
 enum denunciasEstadoLegal: int
 {
   case  INSTANCIA_INICIAL       = 10;
@@ -38,4 +40,5 @@ enum denunciasEstadoLegal: int
     };
     return $options;
   }
+  
 }

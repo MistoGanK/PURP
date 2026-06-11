@@ -14,9 +14,9 @@ if (isset($_SESSION['flash'])) {
 
 <script>
     window.APP_CONFIG = {
-        categoriaProfesional: <?php echo json_encode(categoriaProfesional::jsonOptions()); ?>,
-        estadoProfesional: <?php echo json_encode(estadoProfesional::jsonOptions()); ?>,
-        tipoUsuario: <?php echo json_encode(tipoUsuario::jsonOptions()); ?>,
+        categoriaProfesional: <?php echo json_encode(\app\enums\categoriaProfesional::jsonOptions()); ?>,
+        estadoProfesional: <?php echo json_encode(\app\enums\estadoProfesional::jsonOptions()); ?>,
+        tipoUsuario: <?php echo json_encode(\app\enums\tipoUsuario::jsonOptions()); ?>,
         flash: <?php echo isset($flash) ? json_encode($flash) : 'null'; ?>
     };
 </script>
@@ -97,7 +97,7 @@ if (isset($_SESSION['flash'])) {
                 <div class="form-field">
                     <label><?php echo __('label_role') ?? 'Rol del sistema'; ?></label>
                     <select name="agent_user_role" required <?php echo !$isAdmin ? 'disabled' : ''; ?>>
-                        <?php foreach (tipoUsuario::jsonOptions() as $opcion): ?>
+                        <?php foreach (\app\enums\tipoUsuario::jsonOptions() as $opcion): ?>
                             <option value="<?php echo $opcion['value']; ?>" <?php echo (isset($usuarioActual['tipo_usuario']) && $usuarioActual['tipo_usuario'] == $opcion['value']) ? 'selected' : ''; ?>>
                                 <?php echo $opcion['label']; ?>
                             </option>
@@ -108,7 +108,7 @@ if (isset($_SESSION['flash'])) {
                 <div class="form-field">
                     <label><?php echo __('label_category') ?? 'Categoría policial'; ?></label>
                     <select name="agent_category_role" required <?php echo !$isAdmin ? 'disabled' : ''; ?>>
-                        <?php foreach (categoriaProfesional::jsonOptions() as $opcion): ?>
+                        <?php foreach (\app\enums\categoriaProfesional::jsonOptions() as $opcion): ?>
                             <option value="<?php echo $opcion['value']; ?>" <?php echo (isset($usuarioActual['categoria_profesional']) && $usuarioActual['categoria_profesional'] == $opcion['value']) ? 'selected' : ''; ?>>
                                 <?php echo $opcion['label']; ?>
                             </option>
@@ -119,7 +119,7 @@ if (isset($_SESSION['flash'])) {
                 <div class="form-field md:col-span-2">
                     <label><?php echo __('label_status') ?? 'Estado professional'; ?></label>
                     <select name="agent_profesional_state" required <?php echo !$isAdmin ? 'disabled' : ''; ?>>
-                        <?php foreach (estadoProfesional::jsonOptions() as $opcion): ?>
+                        <?php foreach (\app\enums\estadoProfesional::jsonOptions() as $opcion): ?>
                             <option value="<?php echo $opcion['value']; ?>" <?php echo (isset($usuarioActual['estado_profesional']) && $usuarioActual['estado_profesional'] == $opcion['value']) ? 'selected' : ''; ?>>
                                 <?php echo $opcion['label']; ?>
                             </option>

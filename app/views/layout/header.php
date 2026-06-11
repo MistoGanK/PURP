@@ -1,3 +1,10 @@
+<?php
+// Flow control for loggin
+$is_logged = isset($_SESSION['user']);
+$nav_login_action = $is_logged ? 'logout' : 'login';
+$nav_login_class  = $is_logged ? 'logout-link' : 'login-link';
+$nav_login_label  = $is_logged ? __('nav_logout') : __('btn_login');
+?>
 <!DOCTYPE html>
 <html lang="<?php echo $_SESSION['lang'] ?? 'es'; ?>">
 
@@ -66,10 +73,10 @@
             <?php endif; ?>
           </div>
 
-          <span class="nav-separator">|</span>
 
-          <a href="index.php?action=login" class="login-link">
-            <?php echo __('btn_login') ?? 'Iniciar sesión'; ?>
+          <span class="nav-separator">|</span>
+          <a href="index.php?action=<?php echo $nav_login_action; ?>" class="<?php echo $nav_login_class; ?>">
+            <?php echo $nav_login_label; ?>
           </a>
         <?php endif; ?>
 

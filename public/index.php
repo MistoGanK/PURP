@@ -13,16 +13,20 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 // Resources Loader
 spl_autoload_register(function ($className) {
+    $shortClassName = false !== ($pos = strrpos($className, '\\'))
+        ? substr($className, $pos + 1)
+        : $className;
+
     $resources = [
         __DIR__ . '/../app/enums',
         __DIR__ . '/../app/helpers',
         __DIR__ . '/../app/models',
         __DIR__ . '/../app/controllers',
     ];
-    foreach ($resources as $source) {
-        $fileExact = $source . '/' . $className . '.php';
 
-        $fileLower = $source . '/' . lcfirst($className) . '.php';
+    foreach ($resources as $source) {
+        $fileExact = $source . '/' . $shortClassName . '.php';
+        $fileLower = $source . '/' . lcfirst($shortClassName) . '.php';
 
         if (file_exists($fileExact)) {
             require_once($fileExact);
@@ -73,6 +77,8 @@ $router->get('login',             [AuthController::class,       'showLogin']);
 $router->get('verify_mfa',        [MfaController::class,        'showVerifyMfa']);
 $router->get('logout',            [AuthController::class,       'logout']);
 $router->get('denuncias',         [DenunciaController::class,   'listar']);
+$router->get('denuncia',          [DenunciaController::class,   'listarDenuncia']);
+$router->get('delete_denuncia',   [DenunciaController::class,   'eliminar']);
 $router->get('denuncia_nueva',    [DenunciaController::class,   'crear']);
 $router->get('register',          [UserController::class,       'showRegister']);
 $router->get('show_profile',      [UserController::class,       'showProfile']);
@@ -84,6 +90,7 @@ $router->get('mfa_success',       [MfaController::class,        'showSuccess']);
 // Private (POST)   
 $router->post('login',            [AuthController::class,       'login']);
 $router->post('denuncia_guardar', [DenunciaController::class,   'guardar']);
+$router->post('denuncia_update',  [DenunciaController::class,   'actualizar']);
 $router->post('createUser',       [UserController::class,       'createUser']);
 $router->post('createUser',       [UserController::class,       'createUser']);
 $router->post('update_profile',   [UserController::class,       'updateProfile']);

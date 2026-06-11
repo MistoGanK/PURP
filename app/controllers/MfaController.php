@@ -124,7 +124,8 @@ class MfaController
 
     unset($_SESSION['mfa_pending_user']);
 
-    $role = tipoUsuario::tryFrom($user['tipo_usuario']);
+    // CORRECCIÓN OPCIÓN 2: Añadida la ruta absoluta con namespace para localizar el Enum
+    $role = \app\enums\tipoUsuario::tryFrom($user['tipo_usuario']);
     $_SESSION['user'] = [
       'agent_id'              => (int) $user['id_usuario'],
       'agent_plate'           => (string) $user['numero_placa'],

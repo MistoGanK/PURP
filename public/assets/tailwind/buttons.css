@@ -3,7 +3,8 @@
      ESTILOS BASE PARA BOTONES Y ENLACES TIPO BOTÓN
      ---------------------------------------------------- */
   .btn-primary,
-  .btn-secondary {
+  .btn-secondary,
+  .btn-danger {
     @apply inline-flex items-center justify-center 
            px-6 py-2.5 
            rounded-md 
@@ -28,5 +29,16 @@
     @apply bg-(--white) text-(--characol) border border-(--platinium)
            hover:bg-(--platinium) hover:text-(--black)
            focus:ring-(--cool-steel);
+  }
+
+  /* ----------------------------------------------------
+     BOTÓN DANGER (Contorno Rojo/Blanco)
+     ---------------------------------------------------- */
+  .btn-danger {
+    @apply bg-(--carmine) text-(--white) border border-(--carmine)
+         transition-all duration-200
+         hover:brightness-110
+         hover:text-(--white)
+         focus:ring-(--carmine);
   }
 }
